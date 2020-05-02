@@ -5,7 +5,7 @@ class CreateSchedules < ActiveRecord::Migration[6.0]
       t.time :time
       t.string :place
       t.float :price
-      t.references :tattoorequest, null: false, foreign_key: true
+      t.references :tattoo_request, null: false, foreign_key: true
 
       t.timestamps
     end

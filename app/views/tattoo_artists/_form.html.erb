@@ -1,0 +1,11 @@
+<%= simple_form_for(tattoo_artist) do |f| %>
+<%= f.input :first_name %>
+<%= f.input :last_name %>
+<%= f.input :email %>
+<%= f.association :specialties, collection: Specialty.all.order(:name) %>
+<%= f.input :phonenumber %>
+<%= f.input :city %>
+<%= f.input :experience %>
+<%= f.input :photo, as: :file %>
+<%= f.button :submit, "Submit", class: "btn btn-primary" %>
+<% end %>
