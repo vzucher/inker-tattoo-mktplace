@@ -6,7 +6,7 @@ class CreateTattooRequests < ActiveRecord::Migration[6.0]
       t.string :references_photos
       t.string :bodypart
       t.integer :size
-      t.references :tattooartist, null: false, foreign_key: true
+      t.references :tattoo_artist, null: false, foreign_key: true
       t.references :specialty, null: false, foreign_key: true
       t.references :user, null: false, foreign_key: true
 

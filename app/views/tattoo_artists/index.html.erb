@@ -1,0 +1,7 @@
+<h1>All Tattoo Artists available:</h1>
+
+<% @tattooartists.each do |tattoo_artist| %>
+<h3><%= link_to "#{tattoo_artist.first_name} #{tattoo_artist.last_name}", tattoo_artist_path(tattoo_artist) %></h3>
+<p><%= "Cidade:#{tattoo_artist.city}" %></p>
+<p><%= "Experiência:#{tattoo_artist.experience}" %></p>
+<% end %>
