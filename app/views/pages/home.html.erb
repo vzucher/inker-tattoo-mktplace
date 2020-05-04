@@ -1,2 +1,14 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<h1>Welcome :)</h1>
+<div class="container">
+  <ul>
+    <li>
+      <p><%= link_to "Sign Up", new_user_registration_path %></p>
+    </li>
+    <li>
+      <p><%= link_to "Log In", new_user_session_path(@user)  %></p>
+    </li>
+    <li>
+      <p><%= link_to "Log Out", destroy_user_session_path(@user), method: :delete %></p>
+    </li>
+  </ul>
+</div>
