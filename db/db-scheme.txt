@@ -1,0 +1,15 @@
+rails g model Specialty name banner
+rails g model ArtistSpecialty user:references specialty:references
+rails g model TattooRequest title description:text references_photos bodypart size:float user:references specialty:references accepted_at:datetime
+rails g model Schedule tattoo_request:references date_time_options:datetime place price:float chosen_date:datetime accepted_at:datetime
+rails g model Tattoo tattoo_request:references photos likes:integer
+rails g model Review tattoo:references description:text rating:float user:references
+
+
+rails d model Specialty name banner
+rails d model ArtistSpecialty user:references specialty:references
+rails d model TattooRequest title description:text references_photos bodypart size:float user:references tattoo_artist:references specialty:references accepted_at:datetime
+rails d model Schedule tattoo_request:references date_time_options:datime place price:float chosen_date:datetime accepted_at:datetime
+rails d model Tattoo tattoo_request:references photos likes:integer
+rails d model Review tattoo:references description:text rating:float user:references
+

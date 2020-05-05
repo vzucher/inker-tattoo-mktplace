@@ -5,10 +5,11 @@ class CreateTattooRequests < ActiveRecord::Migration[6.0]
       t.text :description
       t.string :references_photos
       t.string :bodypart
-      t.integer :size
-      t.references :tattoo_artist, null: false, foreign_key: true
+      t.float :size
+      t.references :user, null: false
+      t.references :tattoo_artist, null: false
       t.references :specialty, null: false, foreign_key: true
-      t.references :user, null: false, foreign_key: true
+      t.datetime :accepted_at
 
       t.timestamps
     end
