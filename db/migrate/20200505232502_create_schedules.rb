@@ -1,11 +1,12 @@
 class CreateSchedules < ActiveRecord::Migration[6.0]
   def change
     create_table :schedules do |t|
-      t.date :data
-      t.time :time
+      t.references :tattoo_request, null: false, foreign_key: true
+      t.datetime :date_time_options, array: true
       t.string :place
       t.float :price
-      t.references :tattoo_request, null: false, foreign_key: true
+      t.datetime :chosen_date
+      t.datetime :accepted_at
 
       t.timestamps
     end
