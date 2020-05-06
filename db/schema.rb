@@ -93,7 +93,7 @@ ActiveRecord::Schema.define(version: 2020_05_05_233027) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "type"
+    t.string "kind"
     t.string "first_name"
     t.string "last_name"
     t.string "city"
