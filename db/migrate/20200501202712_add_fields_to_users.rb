@@ -1,6 +1,6 @@
 class AddFieldsToUsers < ActiveRecord::Migration[6.0]
   def change
-    add_column :users, :type, :string
+    add_column :users, :kind, :string
     add_column :users, :first_name, :string
     add_column :users, :last_name, :string
     add_column :users, :city, :string
