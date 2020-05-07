@@ -28,6 +28,7 @@ class TattooRequestsController < ApplicationController
   def detroy
     @tattoo_request.destroy
     redirect_to tattoo_request_path
+    authorize @restaurant
   end
   private
 
