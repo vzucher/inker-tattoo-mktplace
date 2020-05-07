@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>All Tattoo Requests:</h1>
+
+  <% @tattoo_requests.each do |tattoo_request| %>
+  <h3><%= link_to "#{tattoo_request.first_name} #{tattoo_request.last_name}", tattoo_request_path(tattoo_request) %></h3>
+  <p><%= "Cidade:#{tattoo_request.city}" %></p>
+  <p><%= "Experiência:#{tattoo_request.experience}" %></p>
+  <% end %>
+</div>

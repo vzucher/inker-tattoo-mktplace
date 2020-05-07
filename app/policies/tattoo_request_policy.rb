@@ -1,7 +1,16 @@
 class TattooRequestPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope.all
+      scope.where(user: user)
     end
   end
+
+  def new?
+    true
+  end
+
+  def create?
+    user.kind == 'user'
+  end
+
 end

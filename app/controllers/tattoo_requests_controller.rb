@@ -8,19 +8,22 @@ class TattooRequestsController < ApplicationController
   # A User should not be able to destroy a Tattoo Request once is accepted by a Tattoo Artist
   # A User should only be able to see its own Tattoo Requests
 
-
   def index
-    @tattoo_requests = TattooRequest.all # (where user = user)
+    @tattoo_requests = policy_scope(TattooRequest) # (where user = user)
   end
 
   def show; end
 
   def new
     @tattoo_request = TattooRequest.new
+    # @tattoo_request.user = current_user
+    # @tattoo_request.tattoo_artist = @tattoo_artist
+    authorize @tattoo_request
   end
 
   def create
     @tattoo_request = TattooRequest.new(tattoo_request_params)
+    authorize @tattoo_request
     @tattoo_request.save
     redirect_to tattoo_request_path(@tattoo_request)
   end
