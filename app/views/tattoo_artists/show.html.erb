@@ -1,0 +1,131 @@
+ <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <h5><%= link_to "All Tattooers", tattoo_artists_path %></h5>
+
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="ml-auto flex">
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" name="query" type="search" placeholder="Search" aria-label="Search" value="">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <a class="btn btn-outline-primary my-2 my-sm-0 ml-2" href="/tattoo_artists/new">Add Tattoer</a>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1552627019-947c3789ffb5?ixlib=rb-1.2.1)">
+  Felipe Americano
+  <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/americanobh" />
+
+</div>
+
+
+<div class="container margin-top-negative">
+  <div class="row">
+    <div class="col-8">
+      <div class="flat-show-card">
+
+        <h3>See my tattoos above</h3>
+
+<div id="demo" class="carousel slide" data-ride="carousel">
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+    <li data-target="#demo" data-slide-to="3"></li>
+  </ul>
+
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://i.pinimg.com/originals/24/b4/ac/24b4ac1a18eed9379d231bc06bb6a3a7.jpg" alt="Tattoo1">
+    </div>
+    <div class="carousel-item">
+      <img src="https://i.pinimg.com/originals/59/9c/35/599c35990cd3e45ea07fc6111ebf0e63.jpg" alt="Tattoo2">
+    </div>
+    <div class="carousel-item">
+      <img src="https://i.pinimg.com/564x/8b/7f/41/8b7f41bcbfdf1a0ba493d5c428ddff0d.jpg" alt="Tattoo3">
+    </div>
+    <div class="carousel-item">
+      <img src="https://i.pinimg.com/564x/8b/7f/41/8b7f41bcbfdf1a0ba493d5c428ddff0d.jpg" alt="Tattoo4">
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+
+</div>
+
+        <p><%= @tattoo_artist.experience %></p>
+          <button type="button" class="btn">Talk to the Artist</button>
+        <div class="map" style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=5 Queensmill Road London SW6 6JP&zoom=13&scale=2&size=1000x1000&maptype=roadmap&markers=color:red%7C5 Queensmill Road London SW6 6JP&key=AIzaSyBtaHK-BLhBg7TruJu8iKk_wETqZMJM-GY')"></div>
+      </div>
+    </div>
+
+    <div class="col-4">
+      <div class="flat-show-card">
+        <h5>Book your tattoo!</h5>
+
+        <form action="">
+          <div class="input-group mt-2">
+            <span class="input-group-addon" id="basic-addon1">Description:</span>
+            <textarea class="form-control" placeholder="I would love to do a buterfly in my back" aria-label="Username" aria-describedby="basic-addon1" style="padding-bottom: 4.5rem;"></textarea>
+          </div>
+          <div class="input-group mt-2">
+            <span class="input-group-addon" id="basic-addon1">References:</span>
+            <input type="file" class="form-control" placeholder="photos" aria-label="Username" aria-describedby="basic-addon1" style="padding-bottom: 2rem;">
+          </div>
+          <div class="input-group mt-2">
+            <span class="input-group-addon" id="basic-addon1">Bodypart:</span>
+            <input type="text" class="form-control" placeholder="Sholder" aria-label="Username" aria-describedby="basic-addon1">
+          </div>
+          <div class="input-group mt-2">
+            <span class="input-group-addon" id="basic-addon1">To:</span>
+            <input type="text" class="form-control" placeholder="18/10/2017" aria-label="Username" aria-describedby="basic-addon1">
+          </div>
+          <div class="input-group mt-2">
+            <span class="input-group-addon" id="basic-addon1">To:</span>
+            <input type="text" class="form-control" placeholder="18/10/2017" aria-label="Username" aria-describedby="basic-addon1">
+          </div>
+          <input type="submit" value="Agende sua tattoo agora!" class="btn btn-success mt-2" style="width: 100%">
+        </form>
+      </div>
+      <div class="flat-show-card">
+        <h3>Details</h3>
+        <div class="flex">
+          <div class="flex">
+            <i class="material-icons mr-2">people</i><span><%= @tattoo_artists.name %></span>
+          </div>
+          <div class="flex ml-3">
+            <i class="material-icons mr-2">euro_symbol</i> <%= @tattoo_artists.phonenumber %>
+          </div>
+        </div>
+      </div>
+      <div class="flat-show-card">
+        <div class="flex-align">
+          <h6 class="no-mb">Share</h6>
+
+          <div class="flex">
+            <i class="fa fa-facebook-square fa-2x mr-2"></i>
+            <i class="fa fa-twitter-square fa-2x mr-2"></i>
+            <i class="fa fa-pinterest-square fa-2x mr-2"></i>
+            <i class="fa fa-envelope-square fa-2x"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+  <div class="footer-copyright">
+    This footer is made with <i class="fas fa-heart"></i> by Bonza
+  </div>
+</div>
+
+</div>
