@@ -1,0 +1,7 @@
+<div class="container">
+  <h1>All Tattoo Artist:</h1>
+
+  <% @tattoo_artists.each do |tattoo_artist| %>
+  <h3><%= link_to "#{tattoo_artist.first_name} #{tattoo_artist.last_name}", tattoo_artist_path(tattoo_artist) %></h3>
+  <% end %>
+</div>
