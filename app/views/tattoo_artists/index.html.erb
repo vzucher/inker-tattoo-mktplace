@@ -23,7 +23,7 @@
 <% @tattoo_artists.each do |t|  %>
           <div class="col-4">
             <div class="flat-card">
-              <div class="flat-card-image" style="background-image: url('https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1200')"></div>
+              <div class="flat-card-image" style="background-image: url( <%= t.photo %>)"></div>
               <div class="flat-card-content">
                 <div class="flat-card-title">
                   <h4><%= link_to t.first_name, tattoo_artist_path(t) %></h4>
