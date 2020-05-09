@@ -1,7 +1,7 @@
 class TattooArtistsController < ApplicationController
 
   def index
-    @tattoo_artists = policy_scope(User)
+    # @tattoo_artists = policy_scope(User)
   end
 
   def show
