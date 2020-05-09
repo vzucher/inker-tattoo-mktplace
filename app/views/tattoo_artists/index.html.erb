@@ -3,7 +3,7 @@
         <div class="container mt-3">
       <div class="row">
         <div class="col-12">
-          <h1><%= 'All our tattoo_artists'%> (<%= User.name %>)</h1>
+          <h1><%= 'All our tattoo_artists'%> (<%= User.first_name %>)</h1>
         </div>
       </div>
 
@@ -26,15 +26,15 @@
               <div class="flat-card-image" style="background-image: url('https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1200')"></div>
               <div class="flat-card-content">
                 <div class="flat-card-title">
-                  <h4><%= link_to t.name, tattoo_artist_path(t) %></h4>
+                  <h4><%= link_to t.first_name, tattoo_artist_path(t) %></h4>
                 </div>
                 <p><%= t.name %></p>
                 <div class="flex">
                   <div class="flex">
-                    <i class="material-icons mr-2">people</i><span><%= t.name %></span>
+                    <i class="material-icons mr-2">people</i><span><%= t.first_name %></span>
                   </div>
                   <div class="flex ml-3">
-                    <i class="material-icons mr-2">euro_symbol</i><%= t.name %>
+                    <i class="material-icons mr-2">euro_symbol</i><%= t.first_name %>
                   </div>
                 </div>
               </div>
