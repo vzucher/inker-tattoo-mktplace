@@ -1,11 +1,22 @@
 <div class="container">
   <h1>All Tattoo Artist:</h1>
 
-  <div class="tattoo-artists-cards">
+  <div class="artists-cards">
+
     <% @tattoo_artists.each do |tattoo_artist| %>
-      <div class="tattoo-artist-card" style="background-image: tattoo_artist.photo">
-      <h3><%= link_to "#{tattoo_artist.first_name} #{tattoo_artist.last_name}", tattoo_artist_path(tattoo_artist) %></h3>
-      <% end %>
+    <div class="artist-card">
+      <%= @tattoo.photos.first %>
+      <div class="artist-info">
+        <h3><%= link_to "#{tattoo_artist.username}", tattoo_artist_path(tattoo_artist) %> <% 3 * %> <i class="fas fa-star"></i></h3>
+        <p>based in <%= tattoo_artist.city %></p>
+        <p>specialties: <%= tattoo_artist.specialty %></p>
       </div>
+      <div id="avatar">
+        <%= @tattoo_artist.photo %>
+      </div>
+    </div>
+    <% end %>
+
   </div>
+
 </div>
