@@ -1,7 +1,51 @@
-<div class="container">
-  <h1>All Tattoo Artist:</h1>
 
-  <% @tattoo_artists.each do |tattoo_artist| %>
-  <h3><%= link_to "#{tattoo_artist.first_name} #{tattoo_artist.last_name}", tattoo_artist_path(tattoo_artist) %></h3>
-  <% end %>
-</div>
+
+        <div class="container mt-3">
+      <div class="row">
+        <div class="col-12">
+          <h1><%= 'All our tattoo_artists'%> (<%= User.first_name %>)</h1>
+        </div>
+      </div>
+
+            <div class="row">
+        <div class="col">
+            <p>All Tattoers.</p>
+        </div>
+      </div>
+
+
+
+
+  <div class="flexbox">
+
+      <div class="row">
+
+<% @tattoo_artists.each do |t|  %>
+          <div class="col-4">
+            <div class="flat-card">
+              <div class="flat-card-image" style="background-image: url('https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1200')"></div>
+              <div class="flat-card-content">
+                <div class="flat-card-title">
+                  <h4><%= link_to t.first_name, tattoo_artist_path(t) %></h4>
+                </div>
+                <p><%= t.name %></p>
+                <div class="flex">
+                  <div class="flex">
+                    <i class="material-icons mr-2">people</i><span><%= t.first_name %></span>
+                  </div>
+                  <div class="flex ml-3">
+                    <i class="material-icons mr-2">euro_symbol</i><%= t.first_name %>
+                  </div>
+                </div>
+              </div>
+              <div class="flat-card-actions">
+                <a href="/tattoo_artists/<%= t.id %>">More info</a>
+                <a class="ml-3 text-warning" href="/tattoo_artists/<%= t.id %>/edit">Edit</a>
+                <a data-confirm="Are you sure?" class="ml-3 text-danger" rel="nofollow" data-method="delete" href="/tatto_artists/<%= t.id %>">Remove</a>
+              </div>
+            </div>
+          </div>
+
+<% end %>
+
+
