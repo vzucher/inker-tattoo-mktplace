@@ -1,26 +1,19 @@
 
-<form action="">
+<%= simple_form_for tattoo_request, url: tattoo_artist_tattoo_requests_path(tattoo_artist), method: :post do |f| %>
           <div class="input-group mt-2">
-            <span class="input-group-addon" id="basic-addon1">Description:</span>
-            <textarea class="form-control" placeholder="I would love to do a buterfly in my back" aria-label="Username" aria-describedby="basic-addon1" style="padding-bottom: 4.5rem;"></textarea>
+            <span class="input-group-addon" id="basic-addon1">Descreva sua idéia:</span>
+            <textarea name="tattoo_request[description]" class="form-control" placeholder="I would love to do a buterfly in my back" aria-label="Username" aria-describedby="basic-addon1" style="padding-bottom: 4.5rem;"></textarea>
           </div>
           <div class="input-group mt-2">
-            <span class="input-group-addon" id="basic-addon1">References:</span>
-            <input type="file" class="form-control" placeholder="photos" aria-label="Username" aria-describedby="basic-addon1" style="padding-bottom: 2rem;">
+            <span class="input-group-addon" id="basic-addon1">Referências:</span>
+            <input name="tattoo_request[references_photos]" type="file" class="form-control" placeholder="photos" aria-label="Username" aria-describedby="basic-addon1" style="padding-bottom: 2rem;">
           </div>
           <div class="input-group mt-2">
-            <span class="input-group-addon" id="basic-addon1">Bodypart:</span>
-            <input type="text" class="form-control" placeholder="Sholder" aria-label="Username" aria-describedby="basic-addon1">
+            <span class="input-group-addon" id="basic-addon1">Parte do Corpo:</span>
+            <input name="tattoo_request[bodypart]" type="text" class="form-control" placeholder="Sholder" aria-label="Username" aria-describedby="basic-addon1">
           </div>
           <br>
-          <p>Preferência de dias e horários:</p>
-          <div class="input-group mt-2">
-            <span class="input-group-addon" id="basic-addon1">Dias da semana:</span>
-            <input type="text" class="form-control" placeholder="terça, quinta e sábado" aria-label="Username" aria-describedby="basic-addon1">
-          </div>
-          <div class="input-group mt-2">
-            <span class="input-group-addon" id="basic-addon1">Horários:</span>
-            <input type="text" class="form-control" placeholder="Antes das 10h00 e depois das 19h00" aria-label="Username" aria-describedby="basic-addon1">
-          </div>
           <input type="submit" value="Agende sua tattoo agora!" class="btn btn-success mt-2" style="width: 100%">
-        </form>
+
+<% end %>
+

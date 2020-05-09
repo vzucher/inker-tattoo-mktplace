@@ -16,6 +16,7 @@ class TattooRequestsController < ApplicationController
 
   def new
     @tattoo_request = TattooRequest.new
+    @tattoo_artist = User.find(params[:tattoo_artist_id])
     # @tattoo_request.user = current_user
     # @tattoo_request.tattoo_artist = @tattoo_artist
     # authorize @tattoo_request
@@ -23,9 +24,8 @@ class TattooRequestsController < ApplicationController
 
   def create
     @tattoo_request = TattooRequest.new(tattoo_request_params)
-    authorize @tattoo_request
     @tattoo_request.save
-    redirect_to tattoo_request_path(@tattoo_request)
+    redirect_to tattoo_artist_path(params[:tattoo_artist_id]), notice: "Requisição de tattoo feita!"
   end
 
   def detroy
