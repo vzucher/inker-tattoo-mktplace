@@ -3,7 +3,7 @@
         <div class="container mt-3">
       <div class="row">
         <div class="col-12">
-          <h1><%= 'All our tattoo_artists'%> (<%= User.first_name %>)</h1>
+          <h1><%= 'All our tattoo_artists'%> (<%= User.count %>)</h1>
         </div>
       </div>
 
@@ -28,7 +28,7 @@
                 <div class="flat-card-title">
                   <h4><%= link_to t.first_name, tattoo_artist_path(t) %></h4>
                 </div>
-                <p><%= t.name %></p>
+                <p><%= t.first_name %></p>
                 <div class="flex">
                   <div class="flex">
                     <i class="material-icons mr-2">people</i><span><%= t.first_name %></span>
