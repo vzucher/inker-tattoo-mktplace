@@ -18,7 +18,7 @@ class TattooRequestsController < ApplicationController
     @tattoo_request = TattooRequest.new
     # @tattoo_request.user = current_user
     # @tattoo_request.tattoo_artist = @tattoo_artist
-    authorize @tattoo_request
+    # authorize @tattoo_request
   end
 
   def create

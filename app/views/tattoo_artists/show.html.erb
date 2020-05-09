@@ -69,30 +69,8 @@
     <div class="col-4">
       <div class="flat-show-card">
         <h5>Book your tattoo!</h5>
-
-        <form action="">
-          <div class="input-group mt-2">
-            <span class="input-group-addon" id="basic-addon1">Description:</span>
-            <textarea class="form-control" placeholder="I would love to do a buterfly in my back" aria-label="Username" aria-describedby="basic-addon1" style="padding-bottom: 4.5rem;"></textarea>
-          </div>
-          <div class="input-group mt-2">
-            <span class="input-group-addon" id="basic-addon1">References:</span>
-            <input type="file" class="form-control" placeholder="photos" aria-label="Username" aria-describedby="basic-addon1" style="padding-bottom: 2rem;">
-          </div>
-          <div class="input-group mt-2">
-            <span class="input-group-addon" id="basic-addon1">Bodypart:</span>
-            <input type="text" class="form-control" placeholder="Sholder" aria-label="Username" aria-describedby="basic-addon1">
-          </div>
-          <div class="input-group mt-2">
-            <span class="input-group-addon" id="basic-addon1">To:</span>
-            <input type="text" class="form-control" placeholder="18/10/2017" aria-label="Username" aria-describedby="basic-addon1">
-          </div>
-          <div class="input-group mt-2">
-            <span class="input-group-addon" id="basic-addon1">To:</span>
-            <input type="text" class="form-control" placeholder="18/10/2017" aria-label="Username" aria-describedby="basic-addon1">
-          </div>
-          <input type="submit" value="Agende sua tattoo agora!" class="btn btn-success mt-2" style="width: 100%">
-        </form>
+        <br>
+       <%= link_to "Agende agora sua Tattoo!", new_tattoo_artist_tattoo_request_path(@tattoo_artist.id), class: "btn btn-outline-primary my-2 my-sm-0 ml-2" %>
       </div>
       <div class="flat-show-card">
         <h3>Details</h3>
