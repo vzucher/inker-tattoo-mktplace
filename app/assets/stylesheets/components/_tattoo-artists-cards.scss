@@ -1,38 +1,45 @@
-.container {
-  display: flex;
-}
-
-
-.tattoo-artists-cards {
+.cards {
   flex-grow: 1;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
   padding: 16px;
 }
 
-.tattoo-artist-card {
-  background-size: cover;
-  background-position: center;
-  height: 150px;
-  border-radius: 1px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+.artist-info {
   display: flex;
-  align-items: center;
-  justify-content: space-around;
-  color: white;
-  font-weight: bolder;
-  text-shadow: 0 0 10px rgba(0,0,0,0.7);
+  background-color: rgba(0, 0, 0, 0.03);
+  padding: 16px;
+  border-radius: 8px;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+
 }
 
-@media(max-width: 992px) {
-  .tattoo-artists-cards {
-    grid-template-columns: 1fr 1fr;
-  }
+#tattoo {
+  height: 240;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 2px;
+
 }
 
-@media(max-width: 768px) {
-  .tattoo-artists-cards {
-    grid-template-columns: 1fr;
-  }
+#avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 1px solid white;
+  position: absolute;
+  top: -25px;
+  right: 16px;
+
+}
+
+.artist-info h3 {
+  margin: 0;
+}
+
+.artist-info p {
+  margin: 0;
 }
