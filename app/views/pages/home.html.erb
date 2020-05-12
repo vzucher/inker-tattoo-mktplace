@@ -1,22 +1,9 @@
-  <!--
-    <ul>
-      <li>
-        <p><%= link_to "Sign Up", new_user_registration_path %></p>
-      </li>
-      <li>
-        <p><%= link_to "Log In", new_user_session_path(@user)  %></p>
-      </li>
-      <li>
-        <p><%= link_to "Log Out", destroy_user_session_path(@user), method: :delete %></p>
-      </li>
-    </ul>
 
-   -->
 
 <head>
   <title>inker – tattoo artists</title>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/app/assets/stylesheets/pages/_home.scss">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
@@ -29,12 +16,9 @@
   <div class="banner">
     <h1>INKER</h1>
     <h3>a tattoo platform</h3>
-    <<!-- CONFIGURAR A BUSCA  -->
-    <form class="form-inline ">
-    <input class="form-control" type="text" placeholder="search for"
-    aria-label="search for">
-    <i class="fas fa-search" aria-hidden="true"></i>
-    </form>
+    <!-- CONFIGURAR A BUSCA  -->
+    <input class="search-form" type="text" placeholder="search for"
+     aria-label="search for"> <i class="fas fa-search" aria-hidden="true"></i>
   </div>
 
   <div class="main-container">
@@ -42,9 +26,10 @@
   <h3 class="subtitle"> <i class="fas fa-arrow-right"></i> TATTOO SPECIALTIES</h3>
 
   <div class="carousel" data-flickity='{ "groupCells": true }'>
-    <% Specialty.all each do |specialty| %>
-      <div class="carousel-cell"><h2> <%= specialty.name %> </h2></div>
+    <% Specialty.all.each do |specialty| %>
+    <div class="carousel-cell"><h2> <%= specialty.name.upcase %> </h2></div>
     <% end %>
+
 
   <!-- <div class="carousel-cell"><h2>BOTHANIC</h2></div>
   <div class="carousel-cell"><h2>WATERCOLOR</h2></div>
