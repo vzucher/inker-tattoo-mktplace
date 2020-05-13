@@ -1,11 +1,8 @@
-
-  <h1>All Tattoo Requests:</h1>
-
-
+<br><br><br><br>
         <div class="container mt-3">
       <div class="row">
         <div class="col-12">
-          <h1><%= 'Todas as Requisições de tatuagens'%> (<%= TattooRequest.count %>)</h1>
+          <h2><%= 'Todas as Requisições de tatuagens'%> (<%= TattooRequest.count %>)</h2>
         </div>
       </div>
 
@@ -27,8 +24,12 @@
   <div class="card-product flat-card">
   <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
   <div class="card-product-infos">
-    <h2><%= t.bodypart %></h2>
+    <h2>Bodypart: <%= t.bodypart %></h2>
     <p>Tatto description: <strong><%= t.description %></strong></p>
+    <h5> ID do tatuador: <%= t.tattoo_artist_id %> </h5>
+    <div>
+<!--         <a class="btn btn-outline-primary my-2 my-sm-0 ml-2" href="/users/sign_in">Ler mais sobre</a> -->
+    </div>
   </div>
 </div>
 </div>

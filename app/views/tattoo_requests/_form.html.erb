@@ -9,7 +9,7 @@
             <input name="tattoo_request[references_photos]" type="file" class="form-control" placeholder="photos" aria-label="Username" aria-describedby="basic-addon1" style="padding-bottom: 2rem;">
           </div>
           <div class="input-group mt-2">
-            <span class="input-group-addon" id="basic-addon1">Parte do Corpo:</span>
+            <span class="input-group-addon" id="basic-addon1">Estilo:</span>
             <select name="tattoo_request[specialty_id]" class="form-control" placeholder="Specialty" aria-label="Username" aria-describedby="basic-addon1">
               <% specialties.each do |specialty| %>
                 <option value="<%= specialty.id %>"><%= specialty.name %></option>
