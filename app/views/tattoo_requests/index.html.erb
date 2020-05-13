@@ -1,25 +1,17 @@
-<div class="container">
+
   <h1>All Tattoo Requests:</h1>
-
-  <% @tattoo_requests.each do |tattoo_request| %>
-  <h3></h3>
-  <p><%= "Cidade:#{tattoo_request.description}" %></p>
-  <p><%= "Experiência:#{tattoo_request.bodypart}" %></p>
-  <% end %>
-</div>
-
 
 
         <div class="container mt-3">
       <div class="row">
         <div class="col-12">
-          <h1><%= 'All our tattoo_artists'%> (<%= User.count %>)</h1>
+          <h1><%= 'Todas as Requisições de tatuagens'%> (<%= TattooRequest.count %>)</h1>
         </div>
       </div>
 
             <div class="row">
         <div class="col">
-            <p>All Tattoers.</p>
+            <p>All Requests.</p>
         </div>
       </div>
 
@@ -30,23 +22,16 @@
 
       <div class="row">
 
-<% @tattoo_artists.each do |t|  %>
-          <div class="col-12">
-            <div class="card-product">
-              <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-              <div class="card-product-infos">
-                <h2>Product name</h2>
-                <p>Product description with <strong>relevant info</strong> only.</p>
-              </div>
-              <div class="flat-card-actions">
-                <a href="/tattoo_artists/<%= t.id %>">More info</a>
-                <a class="ml-3 text-warning" href="/tattoo_artists/<%= t.id %>/edit">Edit</a>
-                <a data-confirm="Are you sure?" class="ml-3 text-danger" rel="nofollow" data-method="delete" href="/tatto_artists/<%= t.id %>">Remove</a>
-              </div>
-            </div>
-          </div>
-      </div>
+<% @tattoo_requests.each do |t|  %>
+          <div class="col-6">
+  <div class="card-product flat-card">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+  <div class="card-product-infos">
+    <h2><%= t.bodypart %></h2>
+    <p>Tatto description: <strong><%= t.description %></strong></p>
   </div>
+</div>
+</div>
 
 
 <% end %>

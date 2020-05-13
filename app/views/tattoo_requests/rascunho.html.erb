@@ -1,0 +1,53 @@
+
+
+
+<% @tattoo_requests.each do |t|  %>
+          <div class="col-12">
+            <div class="card-product">
+              <img src="https://i.pinimg.com/originals/24/b4/ac/24b4ac1a18eed9379d231bc06bb6a3a7.jpg" />
+              <div class="card-product-infos">
+                <h2><%= t.specialty_id %>    </h2>
+                <p>Product description with <strong>relevant info</strong> only.</p>
+                <p><%= "Descrição da tattoo:#{t.description}" %></p>
+                <p><%= "Parte do Corpo:#{t.bodypart}" %></p>
+              </div>
+              <div class="flat-card-actions">
+                <a href="/tattoo_artists/<%= t.id %>">More info</a>
+                <a class="ml-3 text-warning" href="/tattoo_artists/<%= t.id %>/edit">Edit</a>
+                <a data-confirm="Are you sure?" class="ml-3 text-danger" rel="nofollow" data-method="delete" href="/tatto_artists/<%= t.id %>">Remove</a>
+              </div>
+            </div>
+          </div>
+      </div>
+  </div>
+
+
+<% end %>
+
+-----------------------------------------
+
+
+          <div class="col-4">
+            <div class="flat-card">
+              <div class="flat-card-image" style="background-image: url( <%= t.references_photos || "https://i.pinimg.com/originals/24/b4/ac/24b4ac1a18eed9379d231bc06bb6a3a7.jpg" %>)"></div>
+              <div class="flat-card-content">
+                <div class="flat-card-title">
+                  <h4></h4>
+                </div>
+                <p><%= t.title %></p>
+                <div class="flex">
+                  <div class="flex">
+                    <i class="material-icons mr-2">people</i><span><%= t.description %></span>
+                  </div>
+                  <div class="flex ml-3">
+                    <i class="material-icons mr-2">euro_symbol</i><%= t.bodypart %>
+                  </div>
+                </div>
+              </div>
+              <div class="flat-card-actions">
+                <a href="/tattoo_artists/<%= t.id %>">The tattoer</a>
+                <a class="ml-3 text-warning" href="/tattoo_artists/<%= t.id %>/edit">Edit</a>
+                <a data-confirm="Are you sure?" class="ml-3 text-danger" rel="nofollow" data-method="delete" href="/tatto_artists/<%= t.id %>">Remove</a>
+              </div>
+            </div>
+          </div>
