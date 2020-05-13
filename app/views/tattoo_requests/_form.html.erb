@@ -10,6 +10,14 @@
           </div>
           <div class="input-group mt-2">
             <span class="input-group-addon" id="basic-addon1">Parte do Corpo:</span>
+            <select name="tattoo_request[specialty_id]" class="form-control" placeholder="Specialty" aria-label="Username" aria-describedby="basic-addon1">
+              <% specialties.each do |specialty| %>
+                <option value="<%= specialty.id %>"><%= specialty.name %></option>
+              <% end %>
+            </select>
+          </div>
+          <div class="input-group mt-2">
+            <span class="input-group-addon" id="basic-addon1">Parte do Corpo:</span>
             <input name="tattoo_request[bodypart]" type="text" class="form-control" placeholder="Sholder" aria-label="Username" aria-describedby="basic-addon1">
           </div>
           <br>
