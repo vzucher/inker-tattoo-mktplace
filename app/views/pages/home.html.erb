@@ -27,7 +27,7 @@
 
   <div class="carousel" data-flickity='{ "groupCells": true }'>
     <% Specialty.all.each do |specialty| %>
-    <div class="carousel-cell"><h2> <%= specialty.name.upcase %> </h2></div>
+    <div class="carousel-cell"><h2> <%= #{specialty.name.upcase} %> </h2></div>
     <% end %>
 
 

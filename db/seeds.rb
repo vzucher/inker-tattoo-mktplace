@@ -30,6 +30,88 @@ Specialty.create([
   { name: 'Japonesa' }]
 )
 
+User.create!([
+    {first_name: 'leandra',
+    last_name: 'medine',
+    city: 'New York',
+    username: 'Leandra Medine',
+    photo: 'https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/s1080x1080/82641075_190938212024735_4103971328591123376_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=111&_nc_ohc=LR1bNCuw-xUAX8sBZEM&oh=4c43adac444949426fb6df7833793066&oe=5EE0FC7E',
+    work_photo: 'https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/p1080x1080/83773699_123949319144389_3530693866493968410_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=X8wXkZjAvyUAX96MOSy&oh=522590fd48e0f9e868bc231c2e025c34&oe=5EE18641',
+    experience: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, aspernatur, itaque. Id necessitatibus consequuntur incidunt facere ipsum aspernatur, corporis, fugit, veniam perferendis ea, nemo sit labore aperiam officiis autem cumque?',
+    type: :tattoo_artist
+
+  },
+     {first_name: 'lou',
+    last_name: 'doillon',
+    city: 'Paris',
+    username: 'Lou Doillon',
+    photo: 'https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/s1080x1080/80347097_170960580669632_8297356907892120839_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=108&_nc_ohc=XDdNMWLTNbUAX9H5Wje&oh=971e5c6e89b265ea918abbe0f3de1b16&oe=5EE490DB',
+    work_photo: 'https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/75562934_1042124246124422_2279794585027181581_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=102&_nc_ohc=cTXqmzXnraMAX8spLyD&oh=06723866acaeb239fbd6b10c2f00a937&oe=5EDFA934',
+    experience: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, aspernatur, itaque. Id necessitatibus consequuntur incidunt facere ipsum aspernatur, corporis, fugit, veniam perferendis ea, nemo sit labore aperiam officiis autem cumque?',
+    type: :tattoo_artist
+  },
+     {first_name: 'yvan',
+    last_name: 'attal',
+    city: 'São Paulo',
+    username: 'Yvan Attal',
+    photo: 'https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/44917787_676670339396006_8845137276365109821_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=102&_nc_ohc=q8MOyW4mKfwAX_pduRH&oh=98ba67871ddb65507f9949a9248986a1&oe=5EE0E72D',
+    work_photo: 'https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/p1080x1080/83773699_123949319144389_3530693866493968410_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=X8wXkZjAvyUAX96MOSy&oh=522590fd48e0f9e868bc231c2e025c34&oe=5EE18641',
+    experience: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, aspernatur, itaque. Id necessitatibus consequuntur incidunt facere ipsum aspernatur, corporis, fugit, veniam perferendis ea, nemo sit labore aperiam officiis autem cumque?',
+    type: :tattoo_artist
+
+  },
+     {first_name: 'leandra',
+    last_name: 'medine',
+    city: 'New York',
+    username: 'Leandra Medine',
+    photo: 'https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/s1080x1080/82641075_190938212024735_4103971328591123376_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=111&_nc_ohc=LR1bNCuw-xUAX8sBZEM&oh=4c43adac444949426fb6df7833793066&oe=5EE0FC7E',
+    work_photo: 'https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/p1080x1080/83773699_123949319144389_3530693866493968410_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=X8wXkZjAvyUAX96MOSy&oh=522590fd48e0f9e868bc231c2e025c34&oe=5EE18641',
+    experience: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, aspernatur, itaque. Id necessitatibus consequuntur incidunt facere ipsum aspernatur, corporis, fugit, veniam perferendis ea, nemo sit labore aperiam officiis autem cumque?',
+    type: :tattoo_artist
+
+  },
+     {first_name: 'leandra',
+    last_name: 'medine',
+    city: 'New York',
+    username: 'Leandra Medine',
+    photo: 'https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/s1080x1080/82641075_190938212024735_4103971328591123376_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=111&_nc_ohc=LR1bNCuw-xUAX8sBZEM&oh=4c43adac444949426fb6df7833793066&oe=5EE0FC7E',
+    work_photo: 'https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/p1080x1080/83773699_123949319144389_3530693866493968410_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=X8wXkZjAvyUAX96MOSy&oh=522590fd48e0f9e868bc231c2e025c34&oe=5EE18641',
+    experience: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, aspernatur, itaque. Id necessitatibus consequuntur incidunt facere ipsum aspernatur, corporis, fugit, veniam perferendis ea, nemo sit labore aperiam officiis autem cumque?',
+    type: :tattoo_artist
+
+  },
+     {first_name: 'leandra',
+    last_name: 'medine',
+    city: 'New York',
+    username: 'Leandra Medine',
+    photo: 'https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/s1080x1080/82641075_190938212024735_4103971328591123376_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=111&_nc_ohc=LR1bNCuw-xUAX8sBZEM&oh=4c43adac444949426fb6df7833793066&oe=5EE0FC7E',
+    work_photo: 'https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/p1080x1080/83773699_123949319144389_3530693866493968410_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=X8wXkZjAvyUAX96MOSy&oh=522590fd48e0f9e868bc231c2e025c34&oe=5EE18641',
+    experience: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, aspernatur, itaque. Id necessitatibus consequuntur incidunt facere ipsum aspernatur, corporis, fugit, veniam perferendis ea, nemo sit labore aperiam officiis autem cumque?',
+    type: :tattoo_artist
+
+  },
+     {first_name: 'leandra',
+    last_name: 'medine',
+    city: 'New York',
+    username: 'Leandra Medine',
+    photo: 'https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/s1080x1080/82641075_190938212024735_4103971328591123376_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=111&_nc_ohc=LR1bNCuw-xUAX8sBZEM&oh=4c43adac444949426fb6df7833793066&oe=5EE0FC7E',
+    work_photo: 'https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/p1080x1080/83773699_123949319144389_3530693866493968410_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=X8wXkZjAvyUAX96MOSy&oh=522590fd48e0f9e868bc231c2e025c34&oe=5EE18641',
+    experience: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, aspernatur, itaque. Id necessitatibus consequuntur incidunt facere ipsum aspernatur, corporis, fugit, veniam perferendis ea, nemo sit labore aperiam officiis autem cumque?',
+    type: :tattoo_artist
+
+  },
+     {first_name: 'leandra',
+    last_name: 'medine',
+    city: 'New York',
+    username: 'Leandra Medine',
+    photo: 'https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/s1080x1080/82641075_190938212024735_4103971328591123376_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=111&_nc_ohc=LR1bNCuw-xUAX8sBZEM&oh=4c43adac444949426fb6df7833793066&oe=5EE0FC7E',
+    work_photo: 'https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/p1080x1080/83773699_123949319144389_3530693866493968410_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=X8wXkZjAvyUAX96MOSy&oh=522590fd48e0f9e868bc231c2e025c34&oe=5EE18641',
+    experience: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, aspernatur, itaque. Id necessitatibus consequuntur incidunt facere ipsum aspernatur, corporis, fugit, veniam perferendis ea, nemo sit labore aperiam officiis autem cumque?',
+    type: :tattoo_artist
+
+  }])
+
+
 User.create!(
     first_name: 'joao',
     last_name: 'amaral',
