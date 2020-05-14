@@ -19,6 +19,11 @@
           <%= f.input :password_confirmation,
                       required: true,
                       input_html: { autocomplete: "new-password" } %>
+          <%= f.input :kind,
+                      collection: User.kinds.keys.to_a,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "kind" }%>
         </div>
 
         <div class="form-actions">
