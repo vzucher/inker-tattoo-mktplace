@@ -1,5 +1,5 @@
 class TattooRequestsController < ApplicationController
-  before_action :find_tattoo_artist, only: %i[new create show destroy]
+  before_action :find_tattoo_artist, only: %i[new create show destroy edit update]
 
   # Any kind of user should be able to create a Tattoo Request
   # Kinds of User: 'tattoo_artist', "user"
@@ -37,7 +37,18 @@ class TattooRequestsController < ApplicationController
     redirect_to tattoo_request_path
     authorize @restaurant
   end
+
+  def edit
+  end
+
+  def update
+      @tattoo_request.update(tattoo_request_params)
+
+    redirect_to tattoo_artist_tattoo_requests_path(params[:tattoo_artist_id]), notice: "Requisição de tattoo feita!"
+  end
+
   private
+
   def find_tattoo_artist
     @tattoo_artist = User.find(params[:tattoo_artist_id])
   end

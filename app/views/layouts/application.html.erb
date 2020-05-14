@@ -27,21 +27,8 @@
     <%= alert %>
   </div>
 <% end %>
- <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-teste">
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <a href="http://localhost:3000/tattoo_artists"><%= image_tag "Marca-Inker-Branco.png", alt: "Le Wagon", width: 70 %></a>
-            <div class="ml-auto flex">
-              <form class="form-inline">
-                <a class="btn-menu " href="/users/sign_in">Tatuadores</h5>
-                <a class="btn-menu" href="/users/sign_in">Tattoos</h5>
-                <a class="btn-menu" style="margin-right: 430px" href="/users/sign_in">Estilos</h5>
-                <a class="btn btn-outline-primary my-2 my-sm-0 ml-2" href="/users/sign_in">Login</a>
-              </form>
-
-            </div>
-          </div>
-        </nav>
-
+    <%= render 'partials/navbar' %>
+    <%= render 'partials/flashes' %>
     <%= yield %>
   </body>
 </html>

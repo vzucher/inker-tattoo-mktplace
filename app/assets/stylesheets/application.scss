@@ -147,8 +147,14 @@ a:hover {
 
 .btn-success{
   color: #fff;
-  background-color: #28a745;
-  border-color: #28a745;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-success:hover {
+    color: #fff;
+  background-color: #24252A ;
+  border-color: #007bff;
 }
 
 .btn-ghost {
@@ -193,6 +199,24 @@ a:hover {
   color: white;
 }
 
+.btn-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+  box-shadow: 0 5 15px rgba(0,0,0,0.2);
+}
+
+.btn-center:hover {
+    color: #fff;
+  background-color: #24252A ;
+  border-color: #007bff;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
 .card-category {
   background-size: cover;
   background-position: center;
@@ -212,6 +236,13 @@ a:hover {
 #demo {
   height: 100vh;
   width: 100%;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 
 .carousel-inner {
@@ -238,3 +269,8 @@ a:hover {
   width: 100%;
   background-color: #24252A !important;
 }
+
+.nav-link {
+color: white;
+}
+

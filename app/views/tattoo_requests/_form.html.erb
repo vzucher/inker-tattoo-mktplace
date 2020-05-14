@@ -1,5 +1,8 @@
-
-<%= simple_form_for tattoo_request, url: tattoo_artist_tattoo_requests_path(tattoo_artist), method: :post do |f| %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-6 center">
+      <br><br><br>
+      <%= simple_form_for tattoo_request, url: tattoo_artist_tattoo_requests_path(tattoo_artist), method: :post do |f| %>
           <div class="input-group mt-2">
             <span class="input-group-addon" id="basic-addon1">Descreva sua idéia:</span>
             <textarea name="tattoo_request[description]" class="form-control" placeholder="I would love to do a buterfly in my back" aria-label="Username" aria-describedby="basic-addon1" style="padding-bottom: 4.5rem;"></textarea>
@@ -21,7 +24,10 @@
             <input name="tattoo_request[bodypart]" type="text" class="form-control" placeholder="Sholder" aria-label="Username" aria-describedby="basic-addon1">
           </div>
           <br>
-          <input type="submit" value="Agende sua tattoo agora!" class="btn btn-success mt-2" style="width: 100%">
+          <input type="submit" value="Agende agora sua tattoo!" class="btn btn-success mt-2" style="width: 100%">
 
-<% end %>
-
+      <% end %>
+      <br><br><br><br>
+    </div>
+  </div>
+</div>
