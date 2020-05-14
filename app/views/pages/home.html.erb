@@ -1,7 +1,5 @@
-
-
 <head>
-  <title>inker – tattoo artists</title>
+  <title>inker – tattoo pkatform</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="/app/assets/stylesheets/pages/_home.scss">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
@@ -21,36 +19,51 @@
      aria-label="search for"> <i class="fas fa-search" aria-hidden="true"></i>
   </div>
 
+
   <div class="main-container">
 
-  <h3 class="subtitle"> <i class="fas fa-arrow-right"></i> TATTOO SPECIALTIES</h3>
+    <h3 class="subtitle"> <i class="fas fa-arrow-right"></i> TATTOO SPECIALTIES</h3>
 
-  <div class="carousel" data-flickity='{ "groupCells": true }'>
-    <% Specialty.all.each do |specialty| %>
-    <div class="carousel-cell"><h2> <%= specialty.name.upcase %> </h2></div>
-    <% end %>
+    <div class="carousel" data-flickity='{ "groupCells": true }'>
+      <% Specialty.all.each do |specialty| %>
+      <div class="carousel-cell"><h2> <%= specialty.name.upcase %> </h2></div>
+      <% end %>
+
+    </div>
+
+    <br>
+
+    <h3 class="subtitle" id="artist-subtitle"> <i class="fas fa-arrow-right"></i> TATTOO ARTISTS</h3>
+
+    <div class="tattoo-cards">
+      <% User.where(kind: :tattoo_artist).each do |artist| %>
+      <div class="tattoo-card">
+        <!-- <%= %> como coloco o id??? -->
 
 
-  <!-- <div class="carousel-cell"><h2>BOTHANIC</h2></div>
-  <div class="carousel-cell"><h2>WATERCOLOR</h2></div>
-  <div class="carousel-cell"><h2>PEOPLE</h2></div>
-  <div class="carousel-cell"><h2>FIVE</h2></div>
-  <div class="carousel-cell"><h2>SIX</h2></div>
-  <div class="carousel-cell"><h2>SEVEN</h2></div> -->
-  </div>
+        <img src="https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/p1080x1080/83773699_123949319144389_3530693866493968410_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=X8wXkZjAvyUAX96MOSy&oh=522590fd48e0f9e868bc231c2e025c34&oe=5EE18641" id="tattoo">
+        <div class="artist-info">
+          <div>
+            <h3> <%= artist.username.upcase %> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> </h3>
+            <p>based in: <%= artist.city %></p>
+            <p>specialties: linha, botanico, aquarela</p>
+          </div>
+          <div>
+            <!-- <%= %> dentro ou fora da string? -->
+            <img src="https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/s1080x1080/91062819_154577675817599_4524730759928090274_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=111&_nc_ohc=ueeoytFq5OgAX-MgfdE&oh=d25bac2b005fb00c3b240523cfbad220&oe=5EE3A7F0" id="avatar">
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <br>
-
-  <h3 class="subtitle" id="artist-subtitle"> <i class="fas fa-arrow-right"></i> TATTOO ARTISTS</h3>
-
-  <div class="tattoo-cards">
-
+    <!--
     <div class="tattoo-card">
-      <img src="https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/p1080x1080/83773699_123949319144389_3530693866493968410_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=X8wXkZjAvyUAX96MOSy&oh=522590fd48e0f9e868bc231c2e025c34&oe=5EE18641" id="tattoo">
+      <img src=<%="https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/p1080x1080/83773699_123949319144389_3530693866493968410_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=X8wXkZjAvyUAX96MOSy&oh=522590fd48e0f9e868bc231c2e025c34&oe=5EE18641" id="tattoo">
       <div class="artist-info">
         <div>
-          <h3>LEANDRA MEDINE <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> </h3>
-          <p>based in New York</p>
+          <h3> LEANDRA MEDINE <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> </h3>
+          <p>based in: New York</p>
           <p>specialties: linha, botanico, aquarela</p>
         </div>
         <div>
@@ -175,8 +188,12 @@
       </div>
     </div>
 
+
+      fim do comentario -->
+
   </div>
 
+  <!-- at the end, load javascript flickity -->
   <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
 
