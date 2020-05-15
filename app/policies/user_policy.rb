@@ -4,4 +4,9 @@ class UserPolicy < ApplicationPolicy
       scope.tattoo_artist
     end
   end
+
+  def show?
+    true
+  end
+
 end
