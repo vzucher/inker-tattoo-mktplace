@@ -66,3 +66,5 @@ gem 'devise'
 
 # pundit for authorization
 gem 'pundit'
+
+gem 'popper_js', '~> 1.14.5'
