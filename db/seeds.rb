@@ -7,6 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
+Specialty.delete_all
+User.delete_all
+Tattoo.delete_all
+
+
+
 Specialty.create([
   { name: 'Aquarela' },
   {name: 'Biomecânica' },
@@ -31,63 +37,95 @@ Specialty.create([
   { name: 'Japonesa' }]
 )
 
-User.create!(
-    first_name: Faker::Name.name,
-    last_name: 'amaral',
-    city: 'BH',
-    username: 'joaozin',
-    experience: 'viajei o mundo todo tatuando e sou fodao',
-    email: 'joaozinho@gmail.com',
-    password: 'atalaia123123123',
-    photo: 'https://tudoparahomens.com.br/wp-content/uploads/2016/07/tatuador-.jpg'
-)
-User.create!(
-    first_name: Faker::Name.name,
-    last_name: 'amarallin',
-    city: 'SP',
-    username: 'joaozin2',
-    experience: 'viajei o mundo todo tatuando e sou fodao2',
-    email: 'joaozinho2@gmail.com',
-    password: 'atalaia123123123',
-    photo: 'https://f.i.uol.com.br/fotografia/2019/03/29/15538955325c9e906cdc68e_1553895532_3x2_md.jpg'
-)
-User.create!(
-    first_name: Faker::Name.name,
-    last_name: 'amaral3',
-    city: 'JF',
-    username: 'joaozin3',
-    experience: 'viajei o mundo todo tatuando e sou fodao3',
-    email: 'joaozinho3@gmail.com',
-    password: 'atalaia123123123',
-    photo: 'https://www.brother.pt/-/media/images/brother-pt/modules/feature-module-images/tatuadores/1170-tatuador.jpg?mw=585&hash=D70A0C9AEA2F020AB762568F4FC5B63AF7FED6C6'
-)
-User.create!(
-    first_name: Faker::Name.name,
-    last_name: 'amaral4',
-    city: 'RJ',
-    username: 'joaozin4',
-    experience: 'viajei o mundo todo tatuando e sou fodao4',
-    email: 'joaozinho4@gmail.com',
-    password: 'atalaia123123123',
-    photo: 'https://saocarlosemrede.com.br/wp-content/uploads/2019/01/21731338_599569217099301_8760591489622192090_n-696x464.jpg'
-)
-User.create!(
-    first_name: Faker::Name.name,
-    last_name: 'amaral5',
-    city: 'JUNIO',
-    username: 'joaozin5',
-    experience: 'viajei o mundo todo tatuando e sou fodao5',
-    email: 'joaozinho5@gmail.com',
-    password: 'atalaia123123123',
-    photo: 'https://wondergirls.com.br/wp-content/uploads/2018/10/Tatuador-Felipe-Eric.jpg'
-)
-User.create!(
-    first_name: Faker::Name.name,
-    last_name: 'amaral6',
-    city: 'MG',
-    username: 'joaozin6',
-    experience: 'viajei o mundo todo tatuando e sou fodao6',
-    email: 'joaozinho6@gmail.com',
-    password: 'atalaia123123123',
-    photo: 'https://www.dicasdemulher.com.br/wp-content/uploads/2017/09/como-encontrar-bons-tatuadores-1.jpg'
-)
+User.create!([
+    { first_name: 'Leandra',
+      last_name: 'Medine',
+      experience: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio consectetur dolor saepe, quis, beatae ut esse doloremque soluta placeat voluptatibus alias eaque vel nesciunt aut voluptate nostrum at. Non, nisi!',
+      username: 'Leandra Medine',
+      city: 'New York',
+      photo: "https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/s1080x1080/82641075_190938212024735_4103971328591123376_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=111&_nc_ohc=LR1bNCuw-xUAX8sBZEM&oh=4c43adac444949426fb6df7833793066&oe=5EE0FC7E",
+      kind: :tattoo_artist,
+      email: 'novousuario1@gmail.com',
+      password: 'xtudo8800',
+      tattoo_photo: "https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/p1080x1080/83773699_123949319144389_3530693866493968410_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=X8wXkZjAvyUAX96MOSy&oh=522590fd48e0f9e868bc231c2e025c34&oe=5EE18641"},
+    { first_name: 'Lou',
+      last_name: 'Doillon',
+      experience: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt mollitia voluptatibus obcaecati, blanditiis, sequi dolore modi maxime fugit ab. Eligendi iusto, magni quaerat cumque error minus perspiciatis enim natus voluptate!',
+      username: 'Lou Doillon',
+      city: 'Paris',
+      photo: "https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/s1080x1080/80347097_170960580669632_8297356907892120839_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=108&_nc_ohc=XDdNMWLTNbUAX9H5Wje&oh=971e5c6e89b265ea918abbe0f3de1b16&oe=5EE490DB",
+      kind: :tattoo_artist,
+      email: 'novousuario2@gmail.com',
+      password: 'xtudo8800',
+      tattoo_photo: "https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/75562934_1042124246124422_2279794585027181581_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=102&_nc_ohc=cTXqmzXnraMAX8spLyD&oh=06723866acaeb239fbd6b10c2f00a937&oe=5EDFA934"},
+    { first_name: 'Yvan',
+      last_name: 'Attal',
+      experience: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione porro minima placeat? Ex nesciunt repudiandae modi quas autem facilis earum in. Praesentium, culpa quasi et autem id sunt. Neque, temporibus.',
+      username: 'Yvan Attal',
+      city: 'Sao Paulo',
+      photo: "https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/44917787_676670339396006_8845137276365109821_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=102&_nc_ohc=q8MOyW4mKfwAX_pduRH&oh=98ba67871ddb65507f9949a9248986a1&oe=5EE0E72D",
+      kind: :tattoo_artist,
+      email: 'novousuario3@gmail.com',
+      password: 'xtudo8800',
+      tattoo_photo: "https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/p1080x1080/88374780_243838776645195_8396174353298267607_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=103&_nc_ohc=VKLqeJm-8JEAX_s5f6L&oh=55c0d8538331d1d31e824206e04ec729&oe=5EE28B11"},
+    { first_name: 'Ben',
+      last_name: 'Thomas',
+      experience: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo consequatur possimus ullam, autem, doloremque cumque deleniti repudiandae doloribus mollitia sapiente animi a similique maxime rerum, provident rem incidunt. Eum, doloribus.',
+      username: 'Ben Thomas',
+      city: 'San Francisco',
+      photo: "https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-19/s320x320/80622072_2577791688942974_687576473988497408_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_ohc=qhAp1x-2YjAAX-zOsNP&oh=6b6b2dd311df18eabf5f4c95496cfb10&oe=5EE13927",
+      kind: :tattoo_artist,
+      email: 'novousuario4@gmail.com',
+      password: 'xtudo8800',
+      tattoo_photo: "https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/p1080x1080/84850366_2648775555342334_12724420061984697_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=110&_nc_ohc=bV6X2pxbQPgAX_D-9vy&oh=b6d8a77f241be58cef7c03ee9a6a4449&oe=5EE17FD7"},
+    { first_name: 'Jayme',
+      last_name: 'Haynon',
+      experience: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus voluptas eum repellendus laborum enim molestiae, doloremque commodi itaque, ab veritatis fugit sapiente saepe illo repellat architecto, unde quam, laboriosam praesentium.',
+      username: 'Jayme Haynon',
+      city: 'Berlin',
+      photo: "https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-19/s320x320/74666972_428677968064887_5808308536098160640_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_ohc=hB8B6bygRG4AX_IiagY&oh=524f12509c1c0289c6f759d591b15db3&oe=5EE3F369",
+      kind: :tattoo_artist,
+      email: 'novousuario5@gmail.com',
+      password: 'xtudo8800',
+      tattoo_photo: "https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/p1080x1080/83619736_875555052863786_5281979114142345915_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=102&_nc_ohc=RWpox74vl4MAX8NhVg5&oh=53066be1f6fb00fb4d10f61ac2ce427b&oe=5EE2C858"},
+    { first_name: 'Jorge',
+      last_name: 'Menna',
+      experience: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam pariatur ab eveniet nobis soluta odio aliquid maiores qui laboriosam eum iure ex ipsum, libero explicabo! Quo ea temporibus, ipsum fugiat.',
+      username: 'Jorge Menna',
+      city: 'Madrid',
+      photo: "https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/64789313_322592798633221_5844885885121773249_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=0JE6FBZvAEIAX9cYkrT&oh=07b65e76513dd40d46aea12c941729cc&oe=5EE2D825",
+      kind: :tattoo_artist,
+      email: 'novousuario6@gmail.com',
+      password: 'xtudo8800',
+      tattoo_photo: "https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/68783794_549114279206977_2359191667126032015_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=F9VmLDjVO-QAX-FPUiZ&oh=2fdd539a95996ed21a13aa3292241b33&oe=5EE2290E"},
+    { first_name: 'Lorenzo',
+      last_name: 'Genovesi',
+      experience: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati soluta natus, atque consectetur, quas aperiam amet itaque magni culpa repellat quod cum excepturi voluptates dolore ipsa necessitatibus fugiat quasi iure.',
+      username: 'Lorenzo Genovesi',
+      city: 'Rome',
+      photo: "https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/65976770_142372796951944_1225458000483479621_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=104&_nc_ohc=VTR7xEReURUAX-aSwgV&oh=b21fb928152f6c5129f4e9f6b5c9e784&oe=5EE36819",
+      kind: :tattoo_artist,
+      email: 'novousuario7@gmail.com',
+      password: 'xtudo8800',
+      tattoo_photo: "https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/36672676_1815093948526800_6847223256273911808_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=100&_nc_ohc=Ebm7QGPUb48AX9W7ZfU&oh=585dd6ba7ec095fe81187a105fb29065&oe=5EE1AED7"},
+    { first_name: 'Joao',
+      last_name: 'Paulo',
+      experience: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, libero quasi perspiciatis impedit assumenda ullam velit similique incidunt quaerat inventore nemo, voluptatem molestias debitis! Quos ea natus amet aperiam, molestias.',
+      username: 'Joao Paulo',
+      city: 'Rio de Janeiro',
+      photo: "https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/14499101_1134937963265687_3115904949687418880_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=111&_nc_ohc=hv9jDG09uhcAX_wiXr8&oh=6df16824b70544d687d859f232ea4fc3&oe=5EE2E468",
+      kind: :tattoo_artist,
+      email: 'novousuario8@gmail.com',
+      password: 'xtudo8800',
+      tattoo_photo: "https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/52846321_123427865461319_2064506796478513428_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=111&_nc_ohc=WVgxP3Y4cd8AX8wy5_8&oh=3055aed093bb5837328a081494a8efe3&oe=5EE0FF46"},
+    { first_name: 'Marije',
+      last_name: 'Vogelzan',
+      experience: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed quis praesentium nulla, error deleniti rem corporis, impedit, repellendus quaerat odio quo. Eligendi sapiente voluptate qui et magni accusamus, dignissimos quis?',
+      username: 'Marije Vogelzan',
+      city: 'Amsterdam',
+      photo: "https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/s1080x1080/91062819_154577675817599_4524730759928090274_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=111&_nc_ohc=ueeoytFq5OgAX-MgfdE&oh=d25bac2b005fb00c3b240523cfbad220&oe=5EE3A7F0",
+      kind: :tattoo_artist,
+      email: 'novousuario9@gmail.com',
+      password: 'xtudo8800',
+      tattoo_photo: "https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/52063763_353177298740203_4740697738750889364_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=107&_nc_ohc=gUu9-mNrM9AAX__kRlo&oh=ee863a998deb61bee1b79c90eb442ae9&oe=5EE3D4DD"}
+  ])
