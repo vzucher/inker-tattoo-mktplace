@@ -1,0 +1,45 @@
+.cards {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  padding: 16px;
+}
+
+.artist-info {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.03);
+  padding: 16px;
+  border-radius: 8px;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+
+}
+
+#tattoo {
+  height: 240;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 2px;
+
+}
+
+#avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 1px solid white;
+  position: absolute;
+  top: -25px;
+  right: 16px;
+
+}
+
+.artist-info h3 {
+  margin: 0;
+}
+
+.artist-info p {
+  margin: 0;
+}

@@ -1,3 +1,4 @@
+
 <h1>Welcome :)</h1>
 <div class="container">
   <ul>
@@ -12,4 +13,68 @@
     </li>
   </ul>
 </div>
+https://github.com/vzucher/inker-tattoo-mktplace/pull/18/conflict?name=app%252Fviews%252Flayouts%252Fapplication.html.erb&ancestor_oid=ba00c0de96595ea591060d23c0ef01e4f4658b57&base_oid=97f16e122612853e319d8350c73b5ae4e0ee93dd&head_oid=9e63ffbbd17e5427c062d74c90cc823c57ce514b<head>
+  <title>inker – tattoo pkatform</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/app/assets/stylesheets/pages/_home.scss">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
+</head>
+
+<body>
+
+  <div class="banner">
+    <h1>INKER</h1>
+    <h3>a tattoo platform</h3>
+    <!-- CONFIGURAR A BUSCA  -->
+    <input class="search-form" type="text" placeholder="search for"
+     aria-label="search for"> <i class="fas fa-search" aria-hidden="true"></i>
+  </div>
+
+
+  <div class="main-container">
+
+    <h3 class="subtitle"> <i class="fas fa-arrow-right"></i> TATTOO SPECIALTIES</h3>
+
+    <div class="carousel" data-flickity='{ "groupCells": true }'>
+      <% Specialty.all.each do |specialty| %>
+      <div class="carousel-cell"><h2> <%= specialty.name.upcase %> </h2></div>
+      <% end %>
+
+    </div>
+
+    <br>
+
+    <h3 class="subtitle" id="artist-subtitle"> <i class="fas fa-arrow-right"></i> TATTOO ARTISTS</h3>
+
+    <div class="tattoo-cards">
+      <% User.where(kind: :tattoo_artist).each do |artist| %>
+      <div class="tattoo-card">
+        <%= link_to tattoo_artist_path(artist) do %>
+          <%= image_tag artist.tattoo_photo, id: "tattoo"%>
+        <% end %>
+        <div class="artist-info">
+          <div>
+            <h3> <%= artist.username.upcase %> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> </h3>
+            <p>based in: <%= artist.city %></p>
+            <p>specialties: <%= artist.specialties %></p>
+          </div>
+          <div>
+            <%= link_to tattoo_artist_path(artist) do %>
+              <%= image_tag artist.photo, id: "avatar" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+</body>
+
 
