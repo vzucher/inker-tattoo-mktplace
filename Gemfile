@@ -30,7 +30,7 @@ gem 'jbuilder', '~> 2.7'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
-gem 'bootstrap', '~> 4.0.0'
+gem 'bootstrap', '~> 4.3.1'
 
 group :development, :test do
   gem 'pry-byebug'
@@ -66,3 +66,5 @@ gem 'devise'
 
 # pundit for authorization
 gem 'pundit'
+
+gem 'popper_js', '~> 1.14.5'
