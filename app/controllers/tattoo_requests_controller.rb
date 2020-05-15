@@ -1,5 +1,5 @@
 class TattooRequestsController < ApplicationController
-  before_action :find_tattoo_request, only: %i[show destroy]
+  before_action :find_tattoo_artist, only: %i[new create show destroy edit update]
 
   # Any kind of user should be able to create a Tattoo Request
   # Kinds of User: 'tattoo_artist', "user"
@@ -9,23 +9,27 @@ class TattooRequestsController < ApplicationController
   # A User should only be able to see its own Tattoo Requests
 
   def index
-    @tattoo_requests = policy_scope(TattooRequest) # (where user = user)
+    @tattoo_requests = TattooRequest.where(tattoo_artist: current_user) # (where user = user)
   end
 
   def show; end
 
   def new
     @tattoo_request = TattooRequest.new
-    # @tattoo_request.user = current_user
+    @specialties = Specialty.all
+   # @tattoo_request.user = current_user
     # @tattoo_request.tattoo_artist = @tattoo_artist
-    authorize @tattoo_request
+    # authorize @tattoo_request
   end
 
   def create
     @tattoo_request = TattooRequest.new(tattoo_request_params)
-    authorize @tattoo_request
-    @tattoo_request.save
-    redirect_to tattoo_request_path(@tattoo_request)
+    @tattoo_request.tattoo_artist = @tattoo_artist
+    @tattoo_request.user = current_user
+
+
+    @tattoo_request.save!
+    redirect_to tattoo_artist_tattoo_requests_path(params[:tattoo_artist_id]), notice: "Requisição de tattoo feita!"
   end
 
   def detroy
@@ -33,10 +37,24 @@ class TattooRequestsController < ApplicationController
     redirect_to tattoo_request_path
     authorize @restaurant
   end
+
+  def edit
+  end
+
+  def update
+      @tattoo_request.update(tattoo_request_params)
+
+    redirect_to tattoo_artist_tattoo_requests_path(params[:tattoo_artist_id]), notice: "Requisição de tattoo feita!"
+  end
+
   private
 
+  def find_tattoo_artist
+    @tattoo_artist = User.find(params[:tattoo_artist_id])
+  end
+
   def find_tattoo_request
-    @tattoorequest = TattooRequest.find(params[:id])
+    @tattoorequest = TattooRequest.find(params[tattoo_artist])
   end
 
   def tattoo_request_params

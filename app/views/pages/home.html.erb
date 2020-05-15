@@ -1,4 +1,19 @@
-<head>
+
+<h1>Welcome :)</h1>
+<div class="container">
+  <ul>
+    <li>
+      <p><%= link_to "Sign Up", new_user_registration_path %></p>
+    </li>
+    <li>
+      <p><%= link_to "Log In", new_user_session_path(@user)  %></p>
+    </li>
+    <li>
+      <p><%= link_to "Log Out", destroy_user_session_path(@user), method: :delete %></p>
+    </li>
+  </ul>
+</div>
+https://github.com/vzucher/inker-tattoo-mktplace/pull/18/conflict?name=app%252Fviews%252Flayouts%252Fapplication.html.erb&ancestor_oid=ba00c0de96595ea591060d23c0ef01e4f4658b57&base_oid=97f16e122612853e319d8350c73b5ae4e0ee93dd&head_oid=9e63ffbbd17e5427c062d74c90cc823c57ce514b<head>
   <title>inker – tattoo pkatform</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="/app/assets/stylesheets/pages/_home.scss">

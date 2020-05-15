@@ -10,7 +10,7 @@ class TattooRequestPolicy < ApplicationPolicy
   end
 
   def create?
-    user.kind == 'user'
+true
   end
 
 end

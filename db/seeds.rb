@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
 
 Specialty.delete_all
 User.delete_all
@@ -128,4 +129,3 @@ User.create!([
       password: 'xtudo8800',
       tattoo_photo: "https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/52063763_353177298740203_4740697738750889364_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=107&_nc_ohc=gUu9-mNrM9AAX__kRlo&oh=ee863a998deb61bee1b79c90eb442ae9&oe=5EE3D4DD"}
   ])
-

@@ -1,10 +1,33 @@
-<%= simple_form_for(@tattoo_request) do |f| %>
-<%= f.input :title %>
-<%= f.input :description %>
-<%= f.input :bodypart %>
-<%= f.input :size %>
-<%= f.association :specialty, collection: @tattoo_artist.specialties.order(:name) %>
-<%= f.input :references_photos, as: :file %>
-<%= f.button :submit, "Submit", class: "btn btn-primary" %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-6 center">
+      <br><br><br>
+      <%= simple_form_for tattoo_request, url: tattoo_artist_tattoo_requests_path(tattoo_artist), method: :post do |f| %>
+          <div class="input-group mt-2">
+            <span class="input-group-addon" id="basic-addon1">Descreva sua idéia:</span>
+            <textarea name="tattoo_request[description]" class="form-control" placeholder="I would love to do a buterfly in my back" aria-label="Username" aria-describedby="basic-addon1" style="padding-bottom: 4.5rem;"></textarea>
+          </div>
+          <div class="input-group mt-2">
+            <span class="input-group-addon" id="basic-addon1">Referências:</span>
+            <input name="tattoo_request[references_photos]" type="file" class="form-control" placeholder="photos" aria-label="Username" aria-describedby="basic-addon1" style="padding-bottom: 2rem;">
+          </div>
+          <div class="input-group mt-2">
+            <span class="input-group-addon" id="basic-addon1">Estilo:</span>
+            <select name="tattoo_request[specialty_id]" class="form-control" placeholder="Specialty" aria-label="Username" aria-describedby="basic-addon1">
+              <% specialties.each do |specialty| %>
+                <option value="<%= specialty.id %>"><%= specialty.name %></option>
+              <% end %>
+            </select>
+          </div>
+          <div class="input-group mt-2">
+            <span class="input-group-addon" id="basic-addon1">Parte do Corpo:</span>
+            <input name="tattoo_request[bodypart]" type="text" class="form-control" placeholder="Sholder" aria-label="Username" aria-describedby="basic-addon1">
+          </div>
+          <br>
+          <input type="submit" value="Agende agora sua tattoo!" class="btn btn-success mt-2" style="width: 100%">
 
+      <% end %>
+      <br><br><br><br>
+    </div>
+  </div>
+</div>
