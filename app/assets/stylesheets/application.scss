@@ -28,6 +28,79 @@
 @import "components/index";
 @import "pages/index";
 
+.card-product {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}
+
+.card-product img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-product h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+}
+.form-elegant .font-small {
+    font-size: 0.8rem; }
+
+.form-elegant .z-depth-1a {
+    -webkit-box-shadow: 0 2px 5px 0 rgba(55, 161, 255, 0.26), 0 4px 12px 0 rgba(121, 155, 254, 0.25);
+    box-shadow: 0 2px 5px 0 rgba(55, 161, 255, 0.26), 0 4px 12px 0 rgba(121, 155, 254, 0.25); }
+
+.form-elegant .z-depth-1-half,
+.form-elegant .btn:hover {
+    -webkit-box-shadow: 0 5px 11px 0 rgba(85, 182, 255, 0.28), 0 4px 15px 0 rgba(36, 133, 255, 0.15);
+    box-shadow: 0 5px 11px 0 rgba(85, 182, 255, 0.28), 0 4px 15px 0 rgba(36, 133, 255, 0.15); }
+
+.form-elegant .modal-header {
+    border-bottom: none; }
+
+.modal-dialog .form-elegant .btn .fab {
+    color: #2196f3!important; }
+
+.form-elegant .modal-body, .form-elegant .modal-footer {
+    font-weight: 400; }
+.form-elegant .font-small {
+    font-size: 0.8rem; }
+
+.form-elegant .z-depth-1a {
+    -webkit-box-shadow: 0 2px 5px 0 rgba(55, 161, 255, 0.26), 0 4px 12px 0 rgba(121, 155, 254, 0.25);
+    box-shadow: 0 2px 5px 0 rgba(55, 161, 255, 0.26), 0 4px 12px 0 rgba(121, 155, 254, 0.25); }
+
+.form-elegant .z-depth-1-half,
+.form-elegant .btn:hover {
+    -webkit-box-shadow: 0 5px 11px 0 rgba(85, 182, 255, 0.28), 0 4px 15px 0 rgba(36, 133, 255, 0.15);
+    box-shadow: 0 5px 11px 0 rgba(85, 182, 255, 0.28), 0 4px 15px 0 rgba(36, 133, 255, 0.15); }
+
+.form-elegant .modal-header {
+    border-bottom: none; }
+
+.modal-dialog .form-elegant .btn .fab {
+    color: #2196f3!important; }
+
+.form-elegant .modal-body, .form-elegant .modal-footer {
+    font-weight: 400; }
+
 .flex {
  display:flex
 }
@@ -44,6 +117,17 @@
  border-radius:2px;
  box-shadow:0 2px 2px 0 rgba(0,0,0,0.14),0 1px 5px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2)
 }
+
+
+.flat-card:hover {
+ width:100%;
+ position:relative;
+ margin:.5rem 0 1rem 0;
+ background-color:#fff;
+ border-radius:2px;
+ box-shadow:0 6px 6px 0 rgba(0,0,0,0.14),0 4px 8px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2)
+}
+
 .flat-card-image {
  height:180px;
  background-position:center;
@@ -89,6 +173,31 @@
  color:#333
 }
 
+
+.btn-menu {
+    color: #F4FFFD;
+    background-color: transparent;
+    border-color: #000000;
+    margin-right: 10px;
+}
+
+a:hover {
+    color: #EB5160;
+    text-decoration: none;
+}
+
+.btn-success{
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-success:hover {
+    color: #fff;
+  background-color: #24252A ;
+  border-color: #007bff;
+}
+
 .btn-ghost {
   color: #4A4A4A;
   border: 1px solid #4A4A4A;
@@ -131,6 +240,25 @@
   color: white;
 }
 
+.btn-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+  box-shadow: 0 5 15px rgba(0,0,0,0.2);
+}
+
+.btn-center:hover {
+    color: #fff;
+  background-color: #24252A ;
+  border-color: #007bff;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+
 .card-category {
   background-size: cover;
   background-position: center;
@@ -150,6 +278,13 @@
 #demo {
   height: 100vh;
   width: 100%;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 
 .carousel-inner {
@@ -174,4 +309,11 @@
   position: fixed;
   top: 0;
   width: 100%;
+
+  background-color: #24252A !important;
 }
+
+.nav-link {
+color: white;
+}
+
