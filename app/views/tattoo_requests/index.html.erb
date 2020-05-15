@@ -25,18 +25,19 @@
   <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
   <div class="card-product-infos">
     <div class="row">
-    <div class="flexbox">
+    <div class="flexbox align-items-center">
     <h2>Bodypart: <%= t.bodypart %></h2>
     <p>Tatto description: <strong><%= t.description %></strong></p>
     <h5> ID do tatuador: <%= t.tattoo_artist_id %> </h5>
     </div>
-    <div class="flexbox">
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalQuickView<%= t.id %>">Mais detalhes</button>
+    <div class="flexbox btn-vertical">
+      <button type="button" class="btn btn-gradient align-items-center" data-toggle="modal" data-target="#modalQuickView<%= t.id %>">Mais detalhes</button>
     </div>
     </div>
   </div>
 </div>
 </div>
+
 
 
 <!-- ---------tattoo-modal-request ------------- -->

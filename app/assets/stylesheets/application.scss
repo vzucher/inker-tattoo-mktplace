@@ -28,6 +28,25 @@
 @import "components/index";
 @import "pages/index";
 
+.profile-img {
+    width: 180px;
+    background: url('https://images.unsplash.com/photo-1504933350103-e840ede978d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=564&q=80');
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: -80px;
+    left: 23%;
+    border-radius: 50%;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+  }
+
+.avatar2 {
+  vertical-align: middle;
+  text-align: center;
+  width: 200px;
+  border-radius: 50%;
+}
+
 .card-product {
   overflow: hidden;
   height: 120px;
@@ -35,6 +54,45 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+}
+
+.sticky {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+
+.btn-gradient {
+  background-color: #045de9;
+  background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);
+  overflow: hidden;
+  height: 40px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  color: #fff;
+-webkit-transition: .5s ease;
+  transition: .5s ease;
+      padding: .84rem 2.14rem;
+    font-size: .81rem;
+}
+
+.bth-gradient:hover {
+      outline: 0;
+    -webkit-box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18),0 4px 15px 0 rgba(0,0,0,0.15);
+    box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18),0 4px 15px 0 rgba(0,0,0,0.15);
+    text-decoration: none;
+      background-color: #045de9;
+  background-image: linear-gradient(315deg, #045de9 20%, #09c6f9 39%);
+
+}
+
+.btn-vertical {
+  align-items: center;
+    margin-top: auto;
+    margin-left: 20px;
+    margin-bottom: auto;
 }
 
 .card-product img {
@@ -58,7 +116,7 @@
 }
 
 .card-product .card-product-infos {
-  padding: 16px;
+  padding: 25px;
 }
 .form-elegant .font-small {
     font-size: 0.8rem; }
@@ -227,18 +285,49 @@ a:hover {
 
 .btn-gradient {
   color: white;
-  padding: 8px 24px;
-  border-radius: 4px;
+  padding: 8px 15px;
   font-weight: bold;
   background: linear-gradient(#167FFB, #0F60C4);
   transition: background 0.3s ease;
-  border: 1px solid #0F60C4;
+  cursor: pointer;
+border: 0;
+border-radius: .125rem;
+-webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
 }
 
-.btn-gradient:hover {
-  background: linear-gradient(#147EFF, #0F67DA);
+.btn-gradient2 {
   color: white;
+  padding: 8px 15px;
+  background-color: #bdd4e7;
+  background-image: linear-gradient(315deg, #bdd4e7 0%, #8693ab 74%);
+  transition: background 0.3s ease;
+  cursor: pointer;
+border: 0;
+border-radius: .125rem;
+-webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
 }
+
+
+.btn-gradient:hover{
+  color: white;
+cursor: pointer;
+border: 0;
+border-radius: .150rem;
+-webkit-box-shadow: 0 5px 15px 0 rgba(0,0,0,0.16),0 5px 15px 0 rgba(0,0,0,0.12);
+box-shadow: 0 5px 15px 0 rgba(0,0,0,0.16),0 5px 15px 0 rgba(0,0,0,0.12);
+}
+
+.btn-gradient2:hover{
+  color: white;
+cursor: pointer;
+border: 0;
+border-radius: .125rem;
+-webkit-box-shadow: 0 5px 15px 0 rgba(0,0,0,0.16),0 5px 15px 0 rgba(0,0,0,0.12);
+box-shadow: 0 5px 15px 0 rgba(0,0,0,0.16),0 5px 15px 0 rgba(0,0,0,0.12);
+}
+
 
 .btn-center {
   display: block;
@@ -247,22 +336,18 @@ a:hover {
   width: 100%;
   color: #fff;
   background-color: #007bff;
-  border-color: #007bff;
   box-shadow: 0 5 15px rgba(0,0,0,0.2);
 }
 
 .btn-center:hover {
-    color: #fff;
-  background-color: #24252A ;
-  border-color: #007bff;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
 }
 
 
 .card-category {
   background-size: cover;
   background-position: center;
-  height: 400px;
+  height: 360px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -273,6 +358,7 @@ a:hover {
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
+
 
 
 #demo {
@@ -287,9 +373,15 @@ a:hover {
   width: 50%;
 }
 
+.tamanho{
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .carousel-inner {
   height: 100%;
-  width: 80%;
+  width: 100%;
   align-content:center;
 }
 

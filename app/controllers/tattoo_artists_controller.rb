@@ -8,6 +8,5 @@ class TattooArtistsController < ApplicationController
 
   def show
     @tattoo_artist = User.find(params[:id])
-    authorize @tattoo_artist
   end
 end
