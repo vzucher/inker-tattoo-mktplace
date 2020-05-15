@@ -38,166 +38,28 @@
     <div class="tattoo-cards">
       <% User.where(kind: :tattoo_artist).each do |artist| %>
       <div class="tattoo-card">
-        <!-- <%= %> como coloco o id??? -->
-
-
-        <img src="https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/p1080x1080/83773699_123949319144389_3530693866493968410_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=X8wXkZjAvyUAX96MOSy&oh=522590fd48e0f9e868bc231c2e025c34&oe=5EE18641" id="tattoo">
+        <%= link_to tattoo_artist_path(artist) do %>
+          <%= image_tag artist.tattoo_photo, id: "tattoo"%>
+        <% end %>
         <div class="artist-info">
           <div>
             <h3> <%= artist.username.upcase %> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> </h3>
             <p>based in: <%= artist.city %></p>
-            <p>specialties: linha, botanico, aquarela</p>
+            <p>specialties: <%= artist.specialties %></p>
           </div>
           <div>
-            <!-- <%= %> dentro ou fora da string? -->
-            <img src="https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/s1080x1080/91062819_154577675817599_4524730759928090274_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=111&_nc_ohc=ueeoytFq5OgAX-MgfdE&oh=d25bac2b005fb00c3b240523cfbad220&oe=5EE3A7F0" id="avatar">
+            <%= link_to tattoo_artist_path(artist) do %>
+              <%= image_tag artist.photo, id: "avatar" %>
             <% end %>
           </div>
         </div>
       </div>
+      <% end %>
     </div>
-
-    <!--
-    <div class="tattoo-card">
-      <img src=<%="https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/p1080x1080/83773699_123949319144389_3530693866493968410_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=X8wXkZjAvyUAX96MOSy&oh=522590fd48e0f9e868bc231c2e025c34&oe=5EE18641" id="tattoo">
-      <div class="artist-info">
-        <div>
-          <h3> LEANDRA MEDINE <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> </h3>
-          <p>based in: New York</p>
-          <p>specialties: linha, botanico, aquarela</p>
-        </div>
-        <div>
-          <img src="https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/s1080x1080/82641075_190938212024735_4103971328591123376_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=111&_nc_ohc=LR1bNCuw-xUAX8sBZEM&oh=4c43adac444949426fb6df7833793066&oe=5EE0FC7E" id="avatar">
-        </div>
-      </div>
-    </div>
-
-    <div class="tattoo-card">
-      <img src="https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/75562934_1042124246124422_2279794585027181581_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=102&_nc_ohc=cTXqmzXnraMAX8spLyD&oh=06723866acaeb239fbd6b10c2f00a937&oe=5EDFA934" id="tattoo">
-      <div class="artist-info">
-        <div>
-          <h3>LOU DOILLON <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> </h3>
-          <p>based in Paris</p>
-          <p>specialties: linha, botanico, aquarela</p>
-        </div>
-        <div>
-          <img src="https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/s1080x1080/80347097_170960580669632_8297356907892120839_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=108&_nc_ohc=XDdNMWLTNbUAX9H5Wje&oh=971e5c6e89b265ea918abbe0f3de1b16&oe=5EE490DB" id="avatar">
-        </div>
-      </div>
-    </div>
-
-
-    <div class="tattoo-card">
-      <img src="https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/p1080x1080/88374780_243838776645195_8396174353298267607_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=103&_nc_ohc=VKLqeJm-8JEAX_s5f6L&oh=55c0d8538331d1d31e824206e04ec729&oe=5EE28B11" id="tattoo">
-      <div class="artist-info">
-        <div>
-          <h3>YVAN ATTAL <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> </h3>
-          <p>based in Sao Paulo</p>
-          <p>specialties: linha, botanico, aquarela</p>
-        </div>
-        <div>
-          <img src="https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/44917787_676670339396006_8845137276365109821_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=102&_nc_ohc=q8MOyW4mKfwAX_pduRH&oh=98ba67871ddb65507f9949a9248986a1&oe=5EE0E72D" id="avatar">
-        </div>
-      </div>
-    </div>
-
-
-    <div class="tattoo-card">
-      <img src="https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/p1080x1080/84850366_2648775555342334_12724420061984697_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=110&_nc_ohc=bV6X2pxbQPgAX_D-9vy&oh=b6d8a77f241be58cef7c03ee9a6a4449&oe=5EE17FD7" id="tattoo">
-      <div class="artist-info">
-        <div>
-          <h3>BEN THOMAS <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> </h3>
-          <p>based in San Francisco</p>
-          <p>specialties: linha, botanico, aquarela</p>
-        </div>
-        <div>
-          <img src="https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-19/s320x320/80622072_2577791688942974_687576473988497408_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_ohc=qhAp1x-2YjAAX-zOsNP&oh=6b6b2dd311df18eabf5f4c95496cfb10&oe=5EE13927" id="avatar">
-        </div>
-      </div>
-    </div>
-
-
-    <div class="tattoo-card">
-      <img src="https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/p1080x1080/83619736_875555052863786_5281979114142345915_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=102&_nc_ohc=RWpox74vl4MAX8NhVg5&oh=53066be1f6fb00fb4d10f61ac2ce427b&oe=5EE2C858" id="tattoo">
-      <div class="artist-info">
-        <div>
-          <h3>JAYME HAYON <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></h3>
-          <p>based in London</p>
-          <p>specialties: linha, botanico, aquarela</p>
-        </div>
-        <div>
-          <img src="https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-19/s320x320/74666972_428677968064887_5808308536098160640_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_ohc=hB8B6bygRG4AX_IiagY&oh=524f12509c1c0289c6f759d591b15db3&oe=5EE3F369" id="avatar">
-        </div>
-      </div>
-    </div>
-
-
-    <div class="tattoo-card">
-      <img src="https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/68783794_549114279206977_2359191667126032015_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=F9VmLDjVO-QAX-FPUiZ&oh=2fdd539a95996ed21a13aa3292241b33&oe=5EE2290E" id="tattoo">
-      <div class="artist-info">
-        <div>
-          <h3>JORGE BARRETO <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> </h3>
-          <p>based in Rio de Janeiro</p>
-          <p>specialties: linha, botanico, aquarela</p>
-        </div>
-        <div>
-          <img src="https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/64789313_322592798633221_5844885885121773249_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=0JE6FBZvAEIAX9cYkrT&oh=07b65e76513dd40d46aea12c941729cc&oe=5EE2D825" id="avatar">
-        </div>
-      </div>
-    </div>
-
-    <div class="tattoo-card">
-      <img src="https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/36672676_1815093948526800_6847223256273911808_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=100&_nc_ohc=Ebm7QGPUb48AX9W7ZfU&oh=585dd6ba7ec095fe81187a105fb29065&oe=5EE1AED7" id="tattoo">
-      <div class="artist-info">
-        <div>
-          <h3>LORENZO GENOVESI <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> </h3>
-          <p>based in Sao Paulo</p>
-          <p>specialties: linha, botanico, aquarela</p>
-        </div>
-        <div>
-          <img src="https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/65976770_142372796951944_1225458000483479621_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=104&_nc_ohc=VTR7xEReURUAX-aSwgV&oh=b21fb928152f6c5129f4e9f6b5c9e784&oe=5EE36819" id="avatar">
-        </div>
-      </div>
-    </div>
-
-    <div class="tattoo-card">
-      <img src="https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/52846321_123427865461319_2064506796478513428_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=111&_nc_ohc=WVgxP3Y4cd8AX8wy5_8&oh=3055aed093bb5837328a081494a8efe3&oe=5EE0FF46" id="tattoo">
-      <div class="artist-info">
-        <div>
-          <h3>JOAO PAULO <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> </h3>
-          <p>based in Recife</p>
-          <p>specialties: linha, botanico, aquarela</p>
-        </div>
-        <div>
-          <img src="https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/14499101_1134937963265687_3115904949687418880_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=111&_nc_ohc=hv9jDG09uhcAX_wiXr8&oh=6df16824b70544d687d859f232ea4fc3&oe=5EE2E468" id="avatar">
-        </div>
-      </div>
-    </div>
-
-    <div class="tattoo-card">
-      <img src="https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/52063763_353177298740203_4740697738750889364_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=107&_nc_ohc=gUu9-mNrM9AAX__kRlo&oh=ee863a998deb61bee1b79c90eb442ae9&oe=5EE3D4DD" id="tattoo">
-      <div class="artist-info">
-        <div>
-          <h3>MARIJE VOGELZAN <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> </h3>
-          <p>based in San Francisco</p>
-          <p>specialties: linha, botanico, aquarela</p>
-        </div>
-        <div>
-          <img src="https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/s1080x1080/91062819_154577675817599_4524730759928090274_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=111&_nc_ohc=ueeoytFq5OgAX-MgfdE&oh=d25bac2b005fb00c3b240523cfbad220&oe=5EE3A7F0" id="avatar">
-        </div>
-      </div>
-    </div>
-
-
-      fim do comentario -->
-
   </div>
 
-  <!-- at the end, load javascript flickity -->
   <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
-
-</div>
 </body>
 
 
