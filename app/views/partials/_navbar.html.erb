@@ -12,25 +12,41 @@
 
       <!-- Right Side Of Navbar -->
       <% if user_signed_in? %>
-        <li class="nav-item nav-fix">
-          <span class="badge badge-pill badge-primary badge-count" ><%= TattooRequest.where(tattoo_artist: current_user).count %></span>
-          <%= link_to tattoo_artist_tattoo_requests_path(current_user), class: 'nav-link' do %>
-            <h6>Requests</h6><span class="sr-only">(current)</span>
+        <% if current_user.tattoo_artist? %>
+            <li class="nav-item nav-fix">
+            <span class="badge badge-pill badge-primary badge-count" style="margin-top: -25px;"><%= TattooRequest.where(tattoo_artist: current_user).count %></span>
+            <%= link_to tattoo_artist_tattoo_requests_path(current_user), class: 'nav-link' do %>
+              <h6>Requests</h6><span class="sr-only">(current)</span>
+            <% end %>
+          </li>
+          <li class="nav-item dropdown">
+            <%= image_tag "https://kitt.lewagon.com/placeholder/users/americanobh", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <%= link_to "Edit Profile",  edit_user_registration_path(current_user), class: "dropdown-item" %>
+              <%= link_to "Tattoos Page", tattoo_artist_path(current_user), class: "dropdown-item" %>
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            </div>
+          </li>
+        <% else %>
+          <li class="nav-item nav-fix">
+            <span class="badge badge-pill badge-primary badge-count" style="margin-top: -25px;" ><%= TattooRequest.where(user: current_user).count %></span>
+            <%= link_to tattoo_artist_tattoo_requests_path(current_user), class: 'nav-link' do %>
+              <h6>Pedidos</h6><span class="sr-only">(current)</span>
+            <% end %>
+          </li>
+          <li class="nav-item dropdown">
+            <%= image_tag "https://kitt.lewagon.com/placeholder/users/americanobh", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <%= link_to "Edit Profile",  edit_user_registration_path(current_user), class: "dropdown-item" %>
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            </div>
+          </li>
           <% end %>
-        </li>
-        <li class="nav-item dropdown">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/americanobh", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Edit Profile",  edit_user_registration_path(current_user), class: "dropdown-item" %>
-            <%= link_to "Tattoos Page", tattoo_artist_path(current_user), class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          </div>
-        </li>
-      <% else %>
-        <li class="nav-item">
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#elegantModalForm">Login</button>
-        </li>
-      <% end %>
+        <% else %>
+          <li class="nav-item">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#elegantModalForm">Login</button>
+          </li>
+        <% end %>
     </div>
   </div>
 </nav>
