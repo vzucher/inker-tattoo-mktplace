@@ -15,7 +15,7 @@ Tattoo.delete_all
 
 Specialty.create([
   { name: 'Aquarela' },
-  {name: 'Biomecânica' },
+  { name: 'Biomecânica' },
   { name: 'Black Work' },
   { name: 'Celta' },
   { name: 'Colorida' },
@@ -36,6 +36,7 @@ Specialty.create([
   { name: 'Tribal' },
   { name: 'Japonesa' }]
 )
+
 
 User.create!([
     { first_name: 'Leandra',
@@ -129,3 +130,60 @@ User.create!([
       password: 'xtudo8800',
       tattoo_photo: "https://instagram.fplu4-1.fna.fbcdn.net/v/t51.2885-15/e35/52063763_353177298740203_4740697738750889364_n.jpg?_nc_ht=instagram.fplu4-1.fna.fbcdn.net&_nc_cat=107&_nc_ohc=gUu9-mNrM9AAX__kRlo&oh=ee863a998deb61bee1b79c90eb442ae9&oe=5EE3D4DD"}
   ])
+
+ArtistSpecialty.create!([
+  { user_id: 1,
+    specialty_id: 1},
+  { user_id: 2,
+    specialty_id: 1},
+  { user_id: 3,
+    specialty_id: 1},
+  { user_id: 4,
+    specialty_id: 2},
+  { user_id: 5,
+    specialty_id: 2},
+  { user_id: 6,
+    specialty_id: 2},
+  { user_id: 7,
+    specialty_id: 3},
+  { user_id: 8,
+    specialty_id: 3},
+  { user_id: 9,
+    specialty_id: 3},
+  { user_id: 1,
+    specialty_id: 4},
+  { user_id: 2,
+    specialty_id: 4},
+  { user_id: 3,
+    specialty_id: 4},
+  { user_id: 4,
+    specialty_id: 5},
+  { user_id: 5,
+    specialty_id: 5},
+  { user_id: 6,
+    specialty_id: 5},
+  { user_id: 7,
+    specialty_id: 6},
+  { user_id: 8,
+    specialty_id: 6},
+  { user_id: 9,
+    specialty_id: 6},
+  { user_id: 1,
+    specialty_id: 7},
+  { user_id: 2,
+    specialty_id: 7},
+  { user_id: 3,
+    specialty_id: 7},
+  { user_id: 4,
+    specialty_id: 8},
+  { user_id: 5,
+    specialty_id: 8},
+  { user_id: 6,
+    specialty_id: 8},
+  { user_id: 7,
+    specialty_id: 9},
+  { user_id: 8,
+    specialty_id: 9},
+  { user_id: 9,
+    specialty_id: 9},
+])
