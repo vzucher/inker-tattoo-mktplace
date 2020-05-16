@@ -11,7 +11,6 @@
   <div class="banner" style="padding-left: 120px;">
     <img src="/logo/inker-logo.png" alt="Inker Tattoo" id="inker-logo">
     <h3>a tattoo platform</h3>
-    <!-- CONFIGURAR A BUSCA  -->
     <input class="search-form" type="text" placeholder="search for"
      aria-label="search for"> <i class="fas fa-search" aria-hidden="true"></i>
   </div>
@@ -20,7 +19,7 @@
     <h3 class="subtitle"> <i class="fas fa-arrow-right"></i> TATTOO SPECIALTIES</h3>
     <div class="carousel" data-flickity='{ "groupCells": true }'>
       <% Specialty.all.each do |specialty| %>
-      <div class="carousel-cell z-depth-5"><h2> <%= specialty.name.upcase %> </h2></div>
+      <div class="carousel-cell z-depth-5"><h2> <%= link_to specialty.name.upcase, specialty_path(specialty) %> </h2></div>
       <% end %>
     </div>
     <br>
@@ -35,7 +34,11 @@
           <div>
             <h3> <%= artist.username.upcase %> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> </h3>
             <p>based in: <%= artist.city %></p>
-            <p>specialties: <%= artist.specialties %></p>
+            <p>specialties:
+              <% artist.specialties.each do |specialty| %>
+                <%= "#{specialty.name} " %>
+              <% end %>
+          </p>
           </div>
           <div>
             <%= link_to tattoo_artist_path(artist) do %>

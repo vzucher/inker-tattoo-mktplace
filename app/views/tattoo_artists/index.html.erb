@@ -13,23 +13,23 @@
     <div class="row">
 
       <div class="main-column col-3">
-      <div class="sticky">
-        <h2> GET TO KNOW ALL THE ARTISTS!</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum ipsam corporis voluptates voluptatem tenetur natus alias veritatis inventore, veniam dolorum officia quo pariatur, sapiente! Optio laboriosam similique incidunt tempora vitae.</p>
-        <br>
-        <form class="form-inline">
-          <input class="form-control-index" type="text" placeholder="search for"
-          aria-label="search for">
-          <i class="fas fa-search" aria-hidden="true"></i>
-        </form>
-        <hr>
-        <h3>TATTOOS SPECIALTIES</h3>
-        <div class="specialties">
-          <% Specialty.all.each do |specialty| %>
-          <h4 class="specialty">  <%= specialty.name.upcase %> </h4>
-          <% end %>
+        <div class="sticky">
+          <h2 class="main-title"> GET TO KNOW THE ARTISTS!</h2>
+          <p class="infos">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum ipsam corporis voluptates voluptatem tenetur natus alias veritatis inventore, veniam dolorum officia quo pariatur, sapiente!</p>
+          <br>
+          <form class="form-inline">
+            <input class="form-control-index" type="text" placeholder="search for"
+            aria-label="search for">
+            <i class="fas fa-search" aria-hidden="true"></i>
+          </form>
+          <hr class="linha">
+          <h3 class="title">TATTOOS SPECIALTIES</h3>
+          <div class="specialties">
+            <% Specialty.all.each do |specialty| %>
+            <h4 class="specialty">  <%= link_to specialty.name.downcase, specialty_path(specialty) %> </h4>
+            <% end %>
+          </div>
         </div>
-      </div>
       </div>
 
       <div class="index-tattoo-cards col-9">
@@ -40,9 +40,13 @@
           <% end %>
           <div class="artist-info">
             <div>
-              <h3> <%= artist.username.upcase %> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> </h3>
-              <p>based in: <%= artist.city %></p>
-              <p>specialties: <%= artist.specialties %></p>
+              <h3 class="title"> <%= artist.username.upcase %> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> </h3>
+              <p class="infos">based in: <%= artist.city %></p>
+              <p class="infos">specialties:
+                <% artist.specialties.each do |specialty| %>
+                  <%= "#{specialty.name} " %>
+                <% end %>
+              </p>
             </div>
             <div>
               <%= link_to tattoo_artist_path(artist) do %>
