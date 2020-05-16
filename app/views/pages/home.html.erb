@@ -13,7 +13,7 @@
   <div class="banner" style="padding-left: 120px;">
 
     <img src="/logo/inker-logo.png" alt="Inker Tattoo" id="inker-logo">
-    <h3>a tattoo platform</h3>
+    <h3 class="bannersubtitle">a tattoo platform</h3>
     <input class="search-form" type="text" placeholder="search for"
      aria-label="search for"> <i class="fas fa-search" aria-hidden="true"></i>
   </div>
@@ -51,7 +51,7 @@
           <div>
             <%= link_to tattoo_artist_path(artist) do %>
               <% if artist.tattoo_photo.present? %>
-                <%= image_tag artist.photo, id: "tattoo" %>
+                <%= image_tag artist.photo, id: "avatar" %>
               <% else %>
                 <%= image_tag "" %>
               <% end %>

@@ -15,6 +15,10 @@ body {
   background-size: cover;
 }
 
+.bannersubtitle {
+  font-family: 'Fira Code', monospace;
+}
+
 .banner h1 {
   padding-bottom: 0;
   margin-bottom: 0;
@@ -53,6 +57,8 @@ input[type=text]:focus {
 .subtitle {
   padding: 36px;
   padding-left: 0;
+  font-family: 'Fira Code', monospace;
+
 }
 
 #artist-subtitle {
