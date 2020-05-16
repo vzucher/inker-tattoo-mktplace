@@ -33,7 +33,8 @@ class TattooRequestsController < ApplicationController
 
 
     @tattoo_request.save!
-    redirect_to tattoo_artist_tattoo_requests_path(params[:tattoo_artist_id]), notice: "Requisição de tattoo feita!"
+    # redirect_to tattoo_artist_tattoo_requests_path(params[:tattoo_artist_id]), notice: "Requisição de tattoo feita!"
+    redirect_to thankyou_path
   end
 
   def detroy

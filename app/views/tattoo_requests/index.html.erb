@@ -26,7 +26,11 @@
     <div class="flexbox align-items-center">
     <strong>Requisição nº <%= t.id %></strong>
     <h5> Tema: <%= t.title %> </h5>
-    <h6> Status: Aguardando</h6>
+    <% if t.accepted_at.nil? %>
+      <h6> Status: Aguardando</h6>
+    <% else %>
+      <h6>Status: Agendado!</h6>
+    <% end %>
     </div>
     <div class="flexbox btn-vertical">
       <button type="button" class="btn btn-gradient align-items-center" data-toggle="modal" data-target="#modalQuickView<%= t.id %>">Mais detalhes</button>
