@@ -1,11 +1,11 @@
-
+<br><br><br><br>
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-6 col-sm-offset-6">
+    <div class="col-sm-6 col-sm-offset-6 center">
 
       <h2>Cadastre aqui</h2>
-
+<br><br>
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
 
@@ -29,11 +29,13 @@
         </div>
 
         <div class="form-actions">
-          <%= f.button :submit, "Cadastrar" %>
+          <%= f.button :submit, "Cadastrar", Class: "btn-gradient" %>
         </div>
       <% end %>
+      <br> <br>
 
-      <%= render "devise/shared/links" %>
+
+      <% render "devise/shared/links" %>
 
     </div>
   </div>

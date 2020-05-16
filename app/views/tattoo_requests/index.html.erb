@@ -2,23 +2,21 @@
         <div class="container mt-3">
       <div class="row">
         <div class="col-12">
-          <h2><%= 'Todas as Requisições de tatuagens'%> (<%= @tattoo_requests.count %>)</h2>
+                 <% if current_user.tattoo_artist? %>
+          <h2><%= 'Todas as Requisições que você recebeu:'%> (<%= @tattoo_requests.count %>)</h2>
+        <% else %>
+          <h2><%= 'Todas as Requisições que você fez '%> </h2>
+        <% end %>
         </div>
       </div>
-
             <div class="row">
         <div class="col">
-            <p>All Requests.</p>
+            <h5>All Requests (<%= @tattoo_requests.count %>)</h5>
         </div>
       </div>
-
-
-
-
+<br><br>
   <div class="flexbox">
-
       <div class="row">
-
 <% @tattoo_requests.each do |t|  %>
           <div class="col-6">
   <div class="card-product flat-card">
@@ -26,9 +24,9 @@
   <div class="card-product-infos">
     <div class="row">
     <div class="flexbox align-items-center">
-    <h2>Bodypart: <%= t.bodypart %></h2>
-    <p>Tatto description: <strong><%= t.description %></strong></p>
-    <h5> ID do tatuador: <%= t.tattoo_artist_id %> </h5>
+    <strong>Requisição nº <%= t.id %></strong>
+    <h5> Tema: <%= t.title %> </h5>
+    <h6> Status: Aguardando</h6>
     </div>
     <div class="flexbox btn-vertical">
       <button type="button" class="btn btn-gradient align-items-center" data-toggle="modal" data-target="#modalQuickView<%= t.id %>">Mais detalhes</button>
@@ -37,11 +35,7 @@
   </div>
 </div>
 </div>
-
-
-
 <!-- ---------tattoo-modal-request ------------- -->
-
 <div class="modal fade" id="modalQuickView<%= t.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
   aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
@@ -96,40 +90,35 @@
             <!--/.Carousel Wrapper-->
           </div>
           <div class="col-lg-7">
+            <br>
             <h2 class="h2-responsive product-name">
-              <strong>Tattoo do Felipe</strong>
+              <strong>Requisição nº <%= t.id %></strong>
             </h2>
-
+<br>
             <!--Accordion wrapper-->
             <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
-
               <!-- Accordion card -->
               <div class="card">
-
                 <!-- Card header -->
                 <div class="card-header" role="tab" id="headingOne1">
                   <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" aria-expanded="true"
                     aria-controls="collapseOne1">
                     <h5 class="mb-0">
-                      Descrição da tatuagem: <i class="fas fa-angle-down rotate-icon"></i>
+                      Informações da tatuagem: <i class="fas fa-angle-down rotate-icon"></i>
                     </h5>
                   </a>
                 </div>
-
                 <!-- Card body -->
                 <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1"
                   data-parent="#accordionEx">
                   <div class="card-body">
-                    <%= t.description %>
+                    <h6> Descrição: </h6>  <%= t.description %>
                   </div>
                 </div>
-
               </div>
               <!-- Accordion card -->
-
               <!-- Accordion card -->
               <div class="card">
-
                 <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1"
                   data-parent="#accordionEx">
                   <div class="card-body">
@@ -138,34 +127,21 @@
                   </div>
                 </div>
                 <!-- Card header -->
-
-
                 <!-- Card body -->
-
-
               </div>
               <!-- Accordion card -->
-
               <!-- Accordion card -->
               <div class="card">
-
                 <!-- Card header -->
-
-
                 <!-- Card body -->
-
               </div>
               <!-- Accordion card -->
-
             </div>
             <!-- Accordion wrapper -->
-
-
             <!-- Add to Cart -->
             <div class="card-body">
-              <div class="row">
+     <!--          <div class="row">
                 <div class="col-md-6">
-
                   <select class="md-form mdb-select colorful-select dropdown-primary">
                     <option value="" disabled selected>Choose your option</option>
                     <option value="1">White</option>
@@ -173,10 +149,8 @@
                     <option value="3">Pink</option>
                   </select>
                   <label>Select color</label>
-
                 </div>
                 <div class="col-md-6">
-
                   <select class="md-form mdb-select colorful-select dropdown-primary">
                     <option value="" disabled selected>Choose your option</option>
                     <option value="1">XS</option>
@@ -184,14 +158,26 @@
                     <option value="3">L</option>
                   </select>
                   <label>Select size</label>
-
                 </div>
-              </div>
+              </div> -->
               <div class="text-center">
+                 <% if current_user.user? %>
+                 <h5>Status:</h5>
+                 <p>Aguardando resposta do tatuador</p>
+                 <br>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <% else %>
+                <%= link_to tattoo_artist_tattoo_request_path(t.tattoo_artist_id, t)+ "?decision=accept", method: :put do %>
                 <button class="btn btn-primary" id='accept-schedule'>Aceitar
                   <i class="fas fa-cart-plus ml-2" aria-hidden="true"></i>
                 </button>
+                <% end %>
+                <%= link_to tattoo_artist_tattoo_request_path(t.tattoo_artist_id, t)+ "?decision=decline", method: :put do %>
+                <button class="btn btn-primary" id='decline-schedule'>Recusar
+                  <i class="fas fa-cart-plus ml-2" aria-hidden="true"></i>
+                </button>
+                <% end %>
+                <% end %>
               </div>
             </div>
             <!-- /.Add to Cart -->
@@ -201,8 +187,4 @@
     </div>
   </div>
 </div>
-
-
 <% end %>
-
-
