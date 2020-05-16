@@ -2,9 +2,10 @@ body {
   margin: 0;
 }
 
-.container {
-  margin: 40px;
-  margin-top: 0px;
+.linha {
+  border-top: 1px dashed rgb(30, 30, 30);
+  margin-top: 32px;
+  margin-bottom: 32px;
 }
 
 .sticky {
@@ -12,10 +13,6 @@ body {
   position: sticky;
   top: 0;
   padding-top: 24px;
-}
-
-.main-title {
-  font-family: 'Fira Code', monospace;
 }
 
 .form-control-index {
@@ -39,32 +36,29 @@ input[type=text]:focus {
   border: 1.3px solid rgb(0, 0, 0);
 }
 
+.container {
+  margin: 40px;
+  margin-top: 0px;
+
+}
+
 .specialties {
   flex-grow: 1;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 6px;
+  grid-gap: 8px;
   margin-top: 24px;
 }
 
 .specialty {
   padding: 6px;
-  padding-left: 4px;
-  padding-right: 4px;
   border: 1px solid rgb(0, 0, 0);
-  font-family: 'Fira Code', monospace;
-  font-size: 10px;
-  color: rgb(0, 0, 0);
-  font-weight: lighter;
-}
-
-.specialty a {
-  text-decoration: none;
 }
 
 .specialty:hover {
   border-radius: 4px;
 }
+
 
 .index-tattoo-cards {
   flex-grow: 1;
@@ -81,6 +75,7 @@ input[type=text]:focus {
   border-radius: 4px;
 }
 
+
 .artist-info {
   display: flex;
   background-color: rgba(0, 0, 0, 0.04);
@@ -93,7 +88,7 @@ input[type=text]:focus {
 }
 
 #tattoo {
-  height: 200px;
+  height: 200;
   width: 100%;
   object-fit: cover;
   border-radius: 4px;
@@ -111,11 +106,7 @@ input[type=text]:focus {
   right: 16px;
 }
 
-.linha {
-  border-top: 1px dashed rgb(30, 30, 30);
-  margin-top: 32px;
-  margin-bottom: 32px;
-}
+
 
 .title {
   margin: 0;
@@ -128,4 +119,14 @@ input[type=text]:focus {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
   font-size: 12px;
+
+}
+
+.main-title {
+  font-family: 'Fira Code', monospace;
+}
+
+h4 {
+  font-family: 'Fira Code', monospace;
+  font-size: 11px;
 }

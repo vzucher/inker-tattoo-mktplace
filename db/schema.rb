@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_14_213659) do
+ActiveRecord::Schema.define(version: 2020_05_16_163027) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 2020_05_14_213659) do
     t.datetime "accepted_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.datetime "declined_at"
     t.index ["specialty_id"], name: "index_tattoo_requests_on_specialty_id"
     t.index ["tattoo_artist_id"], name: "index_tattoo_requests_on_tattoo_artist_id"
     t.index ["user_id"], name: "index_tattoo_requests_on_user_id"
