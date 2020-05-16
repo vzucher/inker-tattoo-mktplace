@@ -11,10 +11,6 @@
 </head>
 
 <body>
-<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cutewallpaper.org/21/tattoo-wallpapers/50+-Tattoo-Wallpaper-for-Computer-on-WallpaperSafari.jpg)">
-
-
-  <div>
 
 
   <div class="banner">
@@ -24,7 +20,6 @@
     <input class="search-form" type="text" placeholder="search for"
      aria-label="search for"> <i class="fas fa-search" aria-hidden="true"></i>
   </div>
-</div>
 
   <div class="main-container">
 
@@ -49,13 +44,13 @@
         <% end %>
         <div class="artist-info">
           <div>
-            <h3> <%= artist.username.upcase %> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> </h3>
+            <h3> <%= artist.try(:username).try(:upcase)%> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> </h3>
             <p>based in: <%= artist.city %></p>
             <p>specialties: <%= artist.specialties %></p>
           </div>
           <div>
             <%= link_to tattoo_artist_path(artist) do %>
-              <%= image_tag artist.photo, id: "avatar" %>
+              <%= image_tag artist.try(:photo), id: "avatar" %>
             <% end %>
           </div>
         </div>
