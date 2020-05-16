@@ -28,8 +28,13 @@
 @import "components/index";
 @import "pages/index";
 
+.nav-bar-space{
+    height: 100px;
+}
+
 .profile-img {
     width: 180px;
+    height: 180px;
     background: url('https://images.unsplash.com/photo-1504933350103-e840ede978d4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=564&q=80');
     background-size: cover;
     background-position: center;
