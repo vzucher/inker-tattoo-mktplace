@@ -11,12 +11,6 @@
 </head>
 
 <body>
-<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cutewallpaper.org/21/tattoo-wallpapers/50+-Tattoo-Wallpaper-for-Computer-on-WallpaperSafari.jpg)">
-
-
-  <div>
-
-
   <div class="banner">
     <img src="/logo/inker-logo.png" alt="Inker Tattoo" id="inker-logo">
     <h3>a tattoo platform</h3>
@@ -51,7 +45,7 @@
           <div>
             <h3> <%= artist.username.upcase %> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> </h3>
             <p>based in: <%= artist.city %></p>
-            <p>specialties: <%= artist.specialties %></p>
+            <p>specialties: <% artist.specialties %></p>
           </div>
           <div>
             <%= link_to tattoo_artist_path(artist) do %>
