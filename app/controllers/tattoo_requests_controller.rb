@@ -46,10 +46,16 @@ class TattooRequestsController < ApplicationController
   end
 
   def update
-      @tattoo_request.update(tattoo_request_params)
-
+    #@tattoo_request.accepted_at = Time.current
+    @tattoo_request.touch(:accepted_at)
     redirect_to tattoo_artist_tattoo_requests_path(params[:tattoo_artist_id]), notice: "Requisição de tattoo feita!"
   end
+
+  def decline
+    @tattoo_request.touch(:declined_at)
+    redirect_to tattoo_artist_tattoo_requests_path(params[:tattoo_artist_id]), notice: "Requisição de tattoo feita!"
+  end
+
 
   private
 
