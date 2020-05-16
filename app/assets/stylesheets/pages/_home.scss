@@ -5,12 +5,14 @@ body {
 }
 
 .banner {
-  background-color: rgb(254, 230, 212);
+  background-color: white;
   /*object-fit: cover;*/
   padding: 120px;
   padding-left: 24px;
   margin: 0;
   font-family: 'Fira Code', monospace;
+  background-image: url('/logo/inker-background.jpg');
+  background-size: cover;
 }
 
 .banner h1 {
