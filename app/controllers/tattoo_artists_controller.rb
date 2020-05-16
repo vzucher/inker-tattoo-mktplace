@@ -2,7 +2,6 @@ class TattooArtistsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     # @tattoo_artists = policy_scope(User)
-    redirect_to root_path
     @tattoo_artists = User.all
   end
 
