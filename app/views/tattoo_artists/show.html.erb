@@ -7,7 +7,7 @@
 </div>
 
 
-<div class="container margin-top-negative">
+<div class="container-show margin-top-negative">
   <div class="row">
     <div class="col-8">
       <div class="flat-show-card">
@@ -58,12 +58,10 @@
       <div class="card card-cascade wider mb-4">
 
       <!--Card image-->
-      <div class="view view-cascade">
         <img src="<%= @tattoo_artist.photo %>" class="card-img-top profile-img">
         <a href="#!">
           <div class="mask rgba-white-slight"></div>
         </a>
-      </div>
       <!--/Card image-->
 
       <!--Card content-->
@@ -74,7 +72,7 @@
         <h3><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> </h3>
             <br>
             <p>based in: <%= @tattoo_artist.city %></p>
-            <p>specialties: <%= @tattoo_artist.specialties %></p>
+            <p>specialties: <%= @tattoo_artist.specialties.map(&:name).join(", ") %></p>
         <p class="card-text">  <%= @tattoo_artist.experience %>
         </p>
 
