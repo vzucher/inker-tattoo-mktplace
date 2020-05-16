@@ -9,7 +9,11 @@ class TattooRequestsController < ApplicationController
   # A User should only be able to see its own Tattoo Requests
 
   def index
-    @tattoo_requests = TattooRequest.where(tattoo_artist: current_user) # (where user = user)
+    if current_user.tattoo_artist?
+      @tattoo_requests = TattooRequest.where(tattoo_artist: current_user) # (where user = user)
+    else
+      @tattoo_requests = TattooRequest.where(user: current_user) # (where user = user)
+    end
   end
 
   def show; end
