@@ -8,8 +8,10 @@
   <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 </head>
 <body>
+
  <div>
   <div class="banner" style="padding-left: 120px;">
+
     <img src="/logo/inker-logo.png" alt="Inker Tattoo" id="inker-logo">
     <h3>a tattoo platform</h3>
     <input class="search-form" type="text" placeholder="search for"
@@ -39,6 +41,7 @@
           <div>
             <h3> <%= artist.username&.upcase %> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> </h3>
             <p>based in: <%= artist.city %></p>
+
             <p>specialties:
               <% artist.specialties.each do |specialty| %>
                 <%= "#{specialty.name} " %>

@@ -35,8 +35,9 @@ document.addEventListener('turbolinks:load', () => {
 
     const acceptSchedule = document.getElementById("accept-schedule");
     acceptSchedule.addEventListener('click', (event) => {
-      window.location.href = "http://localhost:3000/pages";
+      window.location.href = "http://inker-tattoo-mktplace.herokuapp.com/pages";
     });
   };
   thanksAlertOnClick();
+
 });
