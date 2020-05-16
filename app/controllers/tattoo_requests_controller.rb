@@ -1,6 +1,6 @@
 class TattooRequestsController < ApplicationController
   before_action :find_tattoo_artist, only: %i[new create show destroy edit update]
-
+  before_action :find_tattoo_request, only: %i[show destroy edit update]
   # Any kind of user should be able to create a Tattoo Request
   # Kinds of User: 'tattoo_artist', "user"
   # A User should not be able to edit/update any tattoo request, it is unique
@@ -42,9 +42,13 @@ class TattooRequestsController < ApplicationController
   end
 
   def update
-      @tattoo_request.update(tattoo_request_params)
-
-    redirect_to tattoo_artist_tattoo_requests_path(params[:tattoo_artist_id]), notice: "Requisição de tattoo feita!"
+    if params[:decision] == "accept"
+      @tattoo_request.touch(:accepted_at)
+      redirect_to thankyou_path, notice: "Requisição de tattoo feita!"
+    elsif params[:decision] == "decline"
+      @tattoo_request.touch(:declined_at)
+      redirect_to tattoo_artist_tattoo_requests_path(params[:tattoo_artist_id]), notice: "Requisição de tattoo cancelada!"
+    end
   end
 
   private
@@ -54,7 +58,7 @@ class TattooRequestsController < ApplicationController
   end
 
   def find_tattoo_request
-    @tattoorequest = TattooRequest.find(params[tattoo_artist])
+    @tattoo_request = TattooRequest.find(params[:id])
   end
 
   def tattoo_request_params

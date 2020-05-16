@@ -7,7 +7,8 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 </head>
-
+<body>
+ <div>
   <div class="banner" style="padding-left: 120px;">
     <img src="/logo/inker-logo.png" alt="Inker Tattoo" id="inker-logo">
     <h3>a tattoo platform</h3>
@@ -28,11 +29,15 @@
       <% User.where(kind: :tattoo_artist).each do |artist| %>
       <div class="tattoo-card">
         <%= link_to tattoo_artist_path(artist) do %>
-          <%= image_tag artist.tattoo_photo, id: "tattoo"%>
+          <% if artist.tattoo_photo.present? %>
+            <%= image_tag artist.tattoo_photo, id: "tattoo"%>
+          <% else %>
+            <%= image_tag "", id: "tattoo" %>
+          <% end %>
         <% end %>
         <div class="artist-info">
           <div>
-            <h3> <%= artist.username.upcase %> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> </h3>
+            <h3> <%= artist.username&.upcase %> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> </h3>
             <p>based in: <%= artist.city %></p>
             <p>specialties:
               <% artist.specialties.each do |specialty| %>
@@ -42,7 +47,11 @@
           </div>
           <div>
             <%= link_to tattoo_artist_path(artist) do %>
-              <%= image_tag artist.photo, id: "avatar" %>
+              <% if artist.tattoo_photo.present? %>
+                <%= image_tag artist.photo, id: "tattoo" %>
+              <% else %>
+                <%= image_tag "" %>
+              <% end %>
             <% end %>
           </div>
         </div>
