@@ -2,17 +2,21 @@
         <div class="container mt-3">
       <div class="row">
         <div class="col-12">
-          <h2><%= 'Todas as Requisições de tatuagens'%> (<%= @tattoo_requests.count %>)</h2>
+                 <% if current_user.tattoo_artist? %>
+          <h2><%= 'Todas as Requisições que você recebeu:'%> (<%= @tattoo_requests.count %>)</h2>
+        <% else %>
+          <h2><%= 'Todas as Requisições que você fez '%> </h2>
+        <% end %>
         </div>
       </div>
 
             <div class="row">
         <div class="col">
-            <p>All Requests.</p>
+            <h5>All Requests (<%= @tattoo_requests.count %>)</h5>
         </div>
       </div>
 
-
+<br><br>
 
 
   <div class="flexbox">
@@ -26,9 +30,9 @@
   <div class="card-product-infos">
     <div class="row">
     <div class="flexbox align-items-center">
-    <h2>Bodypart: <%= t.bodypart %></h2>
-    <p>Tatto description: <strong><%= t.description %></strong></p>
-    <h5> ID do tatuador: <%= t.tattoo_artist_id %> </h5>
+    <strong>Requisição nº <%= t.id %></strong>
+    <h5> Tema: <%= t.title %> </h5>
+    <h6> Status: Aguardando</h6>
     </div>
     <div class="flexbox btn-vertical">
       <button type="button" class="btn btn-gradient align-items-center" data-toggle="modal" data-target="#modalQuickView<%= t.id %>">Mais detalhes</button>
@@ -96,10 +100,11 @@
             <!--/.Carousel Wrapper-->
           </div>
           <div class="col-lg-7">
+            <br>
             <h2 class="h2-responsive product-name">
-              <strong>Tattoo do Felipe</strong>
+              <strong>Requisição nº <%= t.id %></strong>
             </h2>
-
+<br>
             <!--Accordion wrapper-->
             <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
 
@@ -111,7 +116,7 @@
                   <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" aria-expanded="true"
                     aria-controls="collapseOne1">
                     <h5 class="mb-0">
-                      Descrição da tatuagem: <i class="fas fa-angle-down rotate-icon"></i>
+                      Informações da tatuagem: <i class="fas fa-angle-down rotate-icon"></i>
                     </h5>
                   </a>
                 </div>
@@ -120,7 +125,7 @@
                 <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1"
                   data-parent="#accordionEx">
                   <div class="card-body">
-                    <%= t.description %>
+                    <h6> Descrição: </h6>  <%= t.description %>
                   </div>
                 </div>
 
@@ -163,7 +168,7 @@
 
             <!-- Add to Cart -->
             <div class="card-body">
-              <div class="row">
+     <!--          <div class="row">
                 <div class="col-md-6">
 
                   <select class="md-form mdb-select colorful-select dropdown-primary">
@@ -186,14 +191,24 @@
                   <label>Select size</label>
 
                 </div>
-              </div>
+              </div> -->
               <div class="text-center">
-
+                 <% if current_user.user? %>
+                 <h5>Status:</h5>
+                 <p>Aguardando resposta do tatuador</p>
+                 <br>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <% else %>
                 <%= link_to tattoo_artist_tattoo_request_path(t.tattoo_artist_id, t), method: :put do %>
                 <button class="btn btn-primary" id='accept-schedule'>Aceitar
                   <i class="fas fa-cart-plus ml-2" aria-hidden="true"></i>
                 </button>
+                <% end %>
+                <%= link_to tattoo_artist_tattoo_request_path(t.tattoo_artist_id, t), method: :put do %>
+                <button class="btn btn-primary" id='decline-schedule'>Recusar
+                  <i class="fas fa-cart-plus ml-2" aria-hidden="true"></i>
+                </button>
+                <% end %>
                 <% end %>
               </div>
             </div>
