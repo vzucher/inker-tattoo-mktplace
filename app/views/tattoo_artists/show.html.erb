@@ -1,10 +1,8 @@
 
 
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1552627019-947c3789ffb5?ixlib=rb-1.2.1)">
+
   <%= @tattoo_artist.first_name %>
-  <img class="avatar-large" alt="avatar-large" src="<%= @tattoo_artist.photo %>" />
-
-
 
 </div>
 
@@ -17,22 +15,22 @@
         <h3>See my tattoos above</h3>
 
 
-<div id="carousel-thumb" class="carousel slide carousel-fade carousel-thumbnails"
+<div id="carousel-thumb" class="carousel slide carousel-fade carousel-thumbnails tamanho"
               data-ride="carousel">
               <!--Slides-->
               <div class="carousel-inner" role="listbox">
-                <div class="carousel-item active">
-                  <img class="d-block w-100 center"
-                    src="https://i.pinimg.com/originals/24/b4/ac/24b4ac1a18eed9379d231bc06bb6a3a7.jpg"
+                <div class="carousel-item active ml-auto">
+                  <img class="d-block w-100 ml-auto"
+                    src="<%= @tattoo_artist.tattoo_photo %>"
                     alt="First slide">
                 </div>
-                <div class="carousel-item">
-                  <img class="d-block w-100 center"
+                <div class="carousel-item ml-auto">
+                  <img class="d-block w-100"
                     src="https://i.pinimg.com/originals/59/9c/35/599c35990cd3e45ea07fc6111ebf0e63.jpg"
                     alt="Second slide">
                 </div>
-                <div class="carousel-item">
-                  <img class="d-block w-100 center"
+                <div class="carousel-item ml-auto">
+                  <img class="d-block w-100"
                     src="https://tattoodo-mobile-app.imgix.net/images/posts/20190812_8ImKSlW9XZOrogE.png?auto=format,compress&w=400"
                     alt="Third slide">
                 </div>
@@ -51,41 +49,44 @@
 
             </div>
 
-
-          <button type="button" class="btn btn-success">Talk to the Artist</button>
-
-        <div class="map" style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=5 Queensmill Road London SW6 6JP&zoom=13&scale=2&size=1000x1000&maptype=roadmap&markers=color:red%7C5 Queensmill Road London SW6 6JP&key=AIzaSyBtaHK-BLhBg7TruJu8iKk_wETqZMJM-GY')"></div>
+        <div class="map" style=" background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=5 Queensmill Road London SW6 6JP&zoom=13&scale=2&size=1000x1000&maptype=roadmap&markers=color:red%7C5 Queensmill Road London SW6 6JP&key=AIzaSyBtaHK-BLhBg7TruJu8iKk_wETqZMJM-GY')"></div>
       </div>
     </div>
 
     <div class="col-4">
-      <div class="flat-show-card">
-        <h5>Book your tattoo!</h5>
-        <br>
-       <%= link_to "Agende agora sua Tattoo!", new_tattoo_artist_tattoo_request_path(@tattoo_artist.id), class: "btn btn-outline-primary btn-center" %>
-      </div>
-      <div class="flat-show-card">
-        <h3>Details</h3>
-        <div class="flex">
-          <div class="flex">
-            <i class="material-icons mr-2">people</i><span><%= @tattoo_artist.first_name %></span>
-          </div>
-          <div class="flex ml-3">
-            <i class="material-icons mr-2">euro_symbol</i> <%= @tattoo_artist.first_name %>
-          </div>
-        </div>
-      </div>
-      <div class="flat-show-card">
-        <div class="flex-align">
-          <h6 class="no-mb">Share</h6>
+      <div class="sticky" style="padding-top: 150px; margin-top: -70px">
+      <div class="card card-cascade wider mb-4">
 
-          <div class="flex">
-            <i class="fa fa-facebook-square fa-2x mr-2"></i>
-            <i class="fa fa-twitter-square fa-2x mr-2"></i>
-            <i class="fa fa-pinterest-square fa-2x mr-2"></i>
-            <i class="fa fa-envelope-square fa-2x"></i>
-          </div>
-        </div>
+      <!--Card image-->
+      <div class="view view-cascade">
+        <img src="<%= @tattoo_artist.photo %>" class="card-img-top profile-img">
+        <a href="#!">
+          <div class="mask rgba-white-slight"></div>
+        </a>
+      </div>
+      <!--/Card image-->
+
+      <!--Card content-->
+      <div class="card-body card-body-cascade text-center">
+        <!--Title-->
+        <br><br><br><br>
+        <h4 class="card-title"><strong><%= @tattoo_artist.first_name %>  <%= @tattoo_artist.last_name %></strong></h4>
+        <h3><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> </h3>
+            <br>
+            <p>based in: <%= @tattoo_artist.city %></p>
+            <p>specialties: <%= @tattoo_artist.specialties %></p>
+        <p class="card-text">  <%= @tattoo_artist.experience %>
+        </p>
+
+      </div>
+
+      <div class="flat-show-card">
+       <%= link_to "Agende agora sua Tattoo!", new_tattoo_artist_tattoo_request_path(@tattoo_artist.id), class: "btn btn-gradient btn-center" %>
+<br>
+        <%= link_to "Pergunte ao tatuador!", new_tattoo_artist_tattoo_request_path(@tattoo_artist.id), class: "btn btn-gradient2 btn-center" %>
+
+      </div>
+      </div>
       </div>
     </div>
   </div>
