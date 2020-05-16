@@ -1,5 +1,4 @@
 <head>
-
   <title>inker – tattoo pkatform</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="/app/assets/stylesheets/pages/_home.scss">
@@ -7,17 +6,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
-
 </head>
 
-<body>
-<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cutewallpaper.org/21/tattoo-wallpapers/50+-Tattoo-Wallpaper-for-Computer-on-WallpaperSafari.jpg)">
-
-
-  <div>
-
-
-  <div class="banner">
+  <div class="banner" style="padding-left: 120px;">
     <img src="/logo/inker-logo.png" alt="Inker Tattoo" id="inker-logo">
     <h3>a tattoo platform</h3>
     <!-- CONFIGURAR A BUSCA  -->
@@ -25,22 +16,15 @@
      aria-label="search for"> <i class="fas fa-search" aria-hidden="true"></i>
   </div>
 </div>
-
   <div class="main-container">
-
     <h3 class="subtitle"> <i class="fas fa-arrow-right"></i> TATTOO SPECIALTIES</h3>
-
     <div class="carousel" data-flickity='{ "groupCells": true }'>
       <% Specialty.all.each do |specialty| %>
       <div class="carousel-cell z-depth-5"><h2> <%= specialty.name.upcase %> </h2></div>
       <% end %>
-
     </div>
-
     <br>
-
-    <h3 class="subtitle" id="artist-subtitle"> <i class="fas fa-arrow-right"></i> TATTOO ARTISTS</h3>
-
+    <h3 class="subtitle" id="artist-subtitle"> <i class="fas fa-arrow-right"></i> <%= link_to "TATTOO ARTISTS", tattoo_artists_path %></h3>
     <div class="tattoo-cards">
       <% User.where(kind: :tattoo_artist).each do |artist| %>
       <div class="tattoo-card">
@@ -63,7 +47,5 @@
       <% end %>
     </div>
   </div>
-
   <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-
 </body>

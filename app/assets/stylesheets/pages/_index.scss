@@ -1,2 +1,126 @@
-// Import page-specific CSS files here.
-@import "home";
+body {
+  margin: 0;
+}
+
+.container {
+  margin: 40px;
+  margin-top: 0px;
+}
+
+.sticky {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  padding-top: 24px;
+}
+
+.form-control-index {
+  height: 36px;
+  width: 160px;
+  border: 1px solid rgb(0, 0, 0);
+  font-family: 'Fira Code', monospace;
+  font-size: 12px;
+  padding: 6px;
+  margin-right: 6px;
+}
+
+input[type=text] {
+  transition: ease-in-out, width .35s ease-in-out;
+}
+
+input[type=text]:focus {
+  outline: none;
+  width: 180px;
+  border-radius: 8px;
+  border: 1.3px solid rgb(0, 0, 0);
+}
+
+.specialties {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 8px;
+  margin-top: 24px;
+}
+
+.specialty {
+  padding: 6px;
+  border: 1px solid rgb(0, 0, 0);
+}
+
+.specialty:hover {
+  border-radius: 4px;
+}
+
+.index-tattoo-cards {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 32px;
+  padding-left: 48px;
+  padding-top: 24px;
+}
+
+
+.tattoo-card:hover {
+  opacity: 0.7;
+  border-radius: 4px;
+}
+
+.artist-info {
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.04);
+  padding: 16px;
+  border-radius: 4px;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+
+}
+
+#tattoo {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+
+}
+
+#avatar {
+  height: 70px;
+  width: 70px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid white;
+  position: absolute;
+  top: -25px;
+  right: 16px;
+}
+
+hr {
+  border-top: 1px dashed rgb(30, 30, 30);
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+h3 {
+  margin: 0;
+  margin-bottom: 6px;
+  font-family: 'Fira Code', monospace;
+  font-size: 16px;
+}
+
+p {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+}
+
+h2 {
+  font-family: 'Fira Code', monospace;
+}
+
+h4 {
+  font-family: 'Fira Code', monospace;
+  font-size: 11px;
+}

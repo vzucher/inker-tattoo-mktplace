@@ -1,0 +1,59 @@
+<head>
+  <title>inker – tattoo artists</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/app/assets/stylesheets/pages/_index.scss">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+
+      <div class="main-column col-3">
+      <div class="sticky">
+        <h2> GET TO KNOW ALL THE ARTISTS!</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum ipsam corporis voluptates voluptatem tenetur natus alias veritatis inventore, veniam dolorum officia quo pariatur, sapiente! Optio laboriosam similique incidunt tempora vitae.</p>
+        <br>
+        <form class="form-inline">
+          <input class="form-control-index" type="text" placeholder="search for"
+          aria-label="search for">
+          <i class="fas fa-search" aria-hidden="true"></i>
+        </form>
+        <hr>
+        <h3>TATTOOS SPECIALTIES</h3>
+        <div class="specialties">
+          <% Specialty.all.each do |specialty| %>
+          <h4 class="specialty">  <%= specialty.name.upcase %> </h4>
+          <% end %>
+        </div>
+      </div>
+      </div>
+
+      <div class="index-tattoo-cards col-9">
+        <% User.where(kind: :tattoo_artist).each do |artist| %>
+        <div class="tattoo-card">
+          <%= link_to tattoo_artist_path(artist) do %>
+            <%= image_tag artist.tattoo_photo, id: "tattoo"%>
+          <% end %>
+          <div class="artist-info">
+            <div>
+              <h3> <%= artist.username.upcase %> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> </h3>
+              <p>based in: <%= artist.city %></p>
+              <p>specialties: <%= artist.specialties %></p>
+            </div>
+            <div>
+              <%= link_to tattoo_artist_path(artist) do %>
+                <%= image_tag artist.photo, id: "avatar" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+</body>
