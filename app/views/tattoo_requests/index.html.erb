@@ -24,8 +24,8 @@
   <div class="card-product-infos">
     <div class="row">
     <div class="flexbox align-items-center">
-    <strong>Requisição nº <%= t.id %></strong>
-    <h5> Tema: <%= t.title %> </h5>
+    <strong>Tema: <%= t.description %></strong>
+    <p>Requisição nº <%= t.id %></p>
     <% if t.accepted_at.nil? %>
       <h6> Status: Aguardando</h6>
     <% else %>
@@ -33,7 +33,7 @@
     <% end %>
     </div>
     <div class="flexbox btn-vertical">
-      <button type="button" class="btn btn-gradient align-items-center" data-toggle="modal" data-target="#modalQuickView<%= t.id %>">Mais detalhes</button>
+      <button type="button" class="btn btn-dark align-items-center" data-toggle="modal" data-target="#modalQuickView<%= t.id %>">Mais detalhes</button>
     </div>
     </div>
   </div>
