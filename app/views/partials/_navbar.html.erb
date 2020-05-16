@@ -17,9 +17,11 @@
 
         <!-- Right Side Of Navbar -->
       <% if user_signed_in? %>
-        <li class="nav-item">
-            <span class="badge badge-pill badge-primary" style="float:right;margin-bottom:-10px;"><%= TattooRequest.where(tattoo_artist: current_user).count %></span>
-            <a class="nav-link" href="http://localhost:3000/tattoo_artists/1/tattoo_requests">Requests <span class="sr-only">(current)</span></a>
+        <li class="nav-item nav-fix">
+            <span class="badge badge-pill badge-primary badge-count" ><%= TattooRequest.where(tattoo_artist: current_user).count %></span>
+            <%= link_to tattoo_artist_tattoo_requests_path(current_user), class: 'nav-link' do %>
+            <h6>Requests</h6><span class="sr-only">(current)</span>
+            <% end %>
         </li>
         <li class="nav-item dropdown">
           <%= image_tag "https://kitt.lewagon.com/placeholder/users/americanobh", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>

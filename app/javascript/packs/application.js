@@ -39,4 +39,5 @@ document.addEventListener('turbolinks:load', () => {
     });
   };
   thanksAlertOnClick();
+
 });

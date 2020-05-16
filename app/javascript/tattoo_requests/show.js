@@ -6,3 +6,4 @@ const thanksAlertOnClick = () => {
     alert('Sua tattoo foi agendada!')
   });
 };
+
