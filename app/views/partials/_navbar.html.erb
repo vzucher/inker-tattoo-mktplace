@@ -1,6 +1,8 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-laravel navbar-teste" style="margin-bottom: 20px;">
     <div class="container">
-      <a href="http://localhost:3000/tattoo_artists"><%= image_tag "Marca-Inker-Branco.png", alt: "Inker Tattoo", width: 70 %></a>
+      <%= link_to  tattoo_artists_path do %>
+        <%= image_tag "Marca-Inker-Branco.png", alt: "Inker Tattoo", width: 70 %>
+      <% end %>
       <div class="ml-auto flex">
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -11,7 +13,9 @@
             <a class="nav-link" href="#"><span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="http://localhost:3000/tattoo_artists/"><span class="sr-only">(current)</span></a>
+            <%= link_to tattoo_artists_path, class: "nav-link" do %>
+              <span class="sr-only">(current_user)</span>
+            <% end %>
           </li>
         </ul>
 
